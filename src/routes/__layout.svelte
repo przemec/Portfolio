@@ -1,9 +1,9 @@
 <script lang="ts">
-  import Header from '$lib/header/Header.svelte';
+  import Nav from '$lib/Nav.svelte';
   import '../app.css';
 </script>
 
-<Header />
+<Nav />
 
 <main>
   <slot />
@@ -31,12 +31,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    padding: 20px;
+    color: var(--text-color)
   }
 
-  @media (min-width: 480px) {
-    footer {
-      padding: 40px 0;
-    }
-  }
 </style>

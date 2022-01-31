@@ -1,34 +1,23 @@
 <script context="module" lang="ts">
-	export const prerender = true;
+  export const prerender = true;
 </script>
 
 <script lang="ts">
-	import Counter from '$lib/Counter.svelte';
-	import Stripes from '$lib/Stripes.svelte';
+  import Stripes from '$lib/Stripes.svelte';
 </script>
 
 <svelte:head>
-	<title>Home</title>
+  <title>Przemek | Junior Frond End Developer</title>
 </svelte:head>
 
 <Stripes />
-<section>
-	<h1>
-		Hi,<br />I'm Testing
-	</h1>
-</section>
+<h1>
+  Hi,<br />I'm Testing
+</h1>
 
 <style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 1;
-	}
-
-	h1 {
-		width: 100%;
-		text-align: center;
-	}
+  h1 {
+    width: 100%;
+    text-align: center;
+  }
 </style>

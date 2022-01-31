@@ -1,5 +1,6 @@
 <script>
   import { quintInOut } from 'svelte/easing';
+  import { fade } from 'svelte/transition';
 
   function customfly(node, { duration, delay = 0 }) {
     return {
@@ -8,46 +9,47 @@
       css: (t) => {
         const eased = quintInOut(t);
         return `
-					--translateY: ${(1 - eased) * 110}vh;
+					--translateY: ${(1 - eased) * 160}vh;
         `;
       }
     };
   }
 </script>
 
-<animated>
-  <div in:customfly={{ duration: 200, delay: 500  }} out:customfly={{ duration: 200, delay: 200 }} />
-  <div in:customfly={{ duration: 200, delay: 600 }} out:customfly={{ duration: 200, delay: 100 }} />
-  <div in:customfly={{ duration: 200, delay: 700 }} out:customfly={{ duration: 200 }} />
-</animated>
+<div id="stripes">
+  <div in:customfly={{ duration: 200, delay: 100 }} out:fade={{ duration: 100 }} />
+  <div in:customfly={{ duration: 200, delay: 200 }} out:fade={{ duration: 100 }} />
+  <div in:customfly={{ duration: 200, delay: 300 }} out:fade={{ duration: 100 }} />
+</div>
 
 <style>
-  animated {
-    z-index: 2;
+  #stripes {
+    z-index: -1;
     position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
   }
-  animated div {
+  #stripes div {
     position: absolute;
-    top: -20px;
-    left: 300px;
+    top: -20vh;
+    left: 40vw;
     --translateY: 0vh;
     --translateX: 0;
-    transform: rotate(-10deg) translateY(var(--translateY)) translateX(var(--translateX));
+    transform: rotate(-60deg) translateY(var(--translateY)) translateX(var(--translateX));
     width: 20px;
-    height: 110vh;
+    height: 110vmax;
   }
-  animated div:nth-child(1) {
+  #stripes div:nth-child(1) {
     background: var(--primary);
     --translateX: -21px;
   }
-  animated div:nth-child(2) {
+  #stripes div:nth-child(2) {
     background: #eee;
   }
-  animated div:nth-child(3) {
+  #stripes div:nth-child(3) {
     background: var(--secondary);
     --translateX: 21px;
   }
