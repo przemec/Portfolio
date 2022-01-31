@@ -19,9 +19,6 @@
 			<li class:active={$page.url.pathname === '/about'}>
 				<a sveltekit:prefetch href="/about">About</a>
 			</li>
-			<li class:active={$page.url.pathname === '/todos'}>
-				<a sveltekit:prefetch href="/todos">Todos</a>
-			</li>
 			<li class:active={$page.url.pathname === '/test'}>
 				<a sveltekit:prefetch href="/test">test</a>
 			</li>
@@ -38,6 +35,7 @@
 
 <style>
 	header {
+    z-index: 3;
 		display: flex;
 		justify-content: space-between;
 	}
