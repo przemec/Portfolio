@@ -3,27 +3,29 @@
   import '../app.css';
 </script>
 
-<Nav />
+<header>
+  <Nav />
+</header>
 
-<main>
-  <slot />
-</main>
+<div id="content">
+  <main>
+    <slot />
+  </main>
 
-
-<footer>
-  <p>&copy Przemysław Szczepaniak</p>
-</footer>
+  <footer>
+    <p>&copy Przemysław Szczepaniak</p>
+  </footer>
+</div>
 
 <style>
   main {
+    min-height: 100vh;
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 1rem;
-    width: 100%;
-    max-width: 1024px;
-    margin: 0 auto;
+    width: 100vw;
     box-sizing: border-box;
+    transition: filter 0.2s linear;
   }
 
   footer {
@@ -32,7 +34,6 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
-    color: var(--text-color)
+    color: var(--text-color);
   }
-
 </style>

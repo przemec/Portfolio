@@ -10,7 +10,7 @@
       css: (t) => {
         const eased = quintInOut(t);
         return `
-					--translateY: -${(1 - eased) * 2}em;
+					--translateX: ${(1 - eased) * 30}vw;
         `;
       }
     };
@@ -19,10 +19,7 @@
 
 <div id="navindicator">
   {#each stripes_delays as stripe}
-    <div
-      in:customfly={{ duration: 200, delay: stripe }}
-      out:fade={{ duration: 100, delay: 200 }}
-    />
+    <div transition:customfly={{ duration: 200, delay: stripe }} />
   {/each}
 </div>
 
@@ -30,30 +27,32 @@
   #navindicator {
     z-index: -1;
     position: absolute;
-    top: 0;
-    left: 50%;
-    height: 100%;
-    transform: translateX(-50%);
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
   }
   #navindicator div {
     position: absolute;
-    top: -30%;
-    --translateY: 0;
-    --translateX: -5px;
+    --translateY: -5px;
+    --translateX: 0;
     transform: rotate(0deg) translateY(var(--translateY)) translateX(var(--translateX));
-    width: 10px;
-    height: 45%;
+    width: 55%;
+    height: 10px;
+    border-radius: 5px;
   }
   #navindicator div:nth-child(1) {
+    right: -37%;
     background: var(--primary);
-    --translateX: -16px;
+    --translateY: -15px;
   }
   #navindicator div:nth-child(2) {
-    top: -20%;
+    right: -30%;
     background: #eee;
   }
   #navindicator div:nth-child(3) {
+    right: -35%;
     background: var(--secondary);
-    --translateX: 6px;
+    --translateY: 5px;
   }
 </style>
