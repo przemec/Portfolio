@@ -8,6 +8,11 @@ export default () => {
       } else {
         document.getElementsByTagName('header')[0].style.top = '-120px';
       }
+      if (currentScrollPos !== 0) {
+        document.getElementsByTagName('header')[0].classList.add('hasshadow');
+      } else {
+        document.getElementsByTagName('header')[0].classList.remove('hasshadow');
+      }
       prevScrollpos = currentScrollPos;
     };
   }

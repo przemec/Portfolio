@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import HideHeader from '../helpers/HideHeader';
   import MobileNav from '$lib/MobileNav/index.svelte';
+  import DesktopNav from '$lib/DesktopNav/index.svelte';
   import '../app.css';
   onMount(() => {
     HideHeader();
@@ -12,11 +13,12 @@
   <nav>
     <img src="favicon.png" alt="logo" width="40" height="40" />
     <div id="desktop_nav">
-      <div>desktop</div>
+      <DesktopNav />
     </div>
     <div id="mobile_nav">
       <MobileNav />
     </div>
+    <div id="filler" />
   </nav>
 </header>
 
@@ -36,11 +38,10 @@
     position: fixed;
     top: 0;
     left: 0;
-    height: 80px;
+    height: 90px;
     width: 100%;
     background: var(--background);
-    box-shadow: 0 5px 15px -4px rgba(0, 0, 0, 0.7);
-    transition: top 0.3s, padding 0.3s;
+    transition: top 0.3s, padding 0.3s, box-shadow 0.3s, height 0.3s;
   }
   header nav {
     height: 100%;
@@ -51,7 +52,8 @@
     justify-content: space-between;
     align-items: center;
   }
-  #desktop_nav {
+  #desktop_nav,
+  #filler {
     display: none;
   }
   @media (min-width: 800px) {
@@ -63,6 +65,10 @@
     }
     #desktop_nav {
       display: initial;
+    }
+    #filler {
+      display: initial;
+      width: 40px;
     }
   }
   #content {
