@@ -19,10 +19,8 @@
 
 <style>
   div {
-    position: absolute;
-    margin: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    margin: auto;
+    height: 100%;
     width: 100%;
     display: flex;
     align-items: center;

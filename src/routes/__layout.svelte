@@ -18,13 +18,18 @@
 </div>
 
 <style>
-  main {
+  #content {
     min-height: 100vh;
-    flex: 1;
     display: flex;
     flex-direction: column;
+  }
+  main {
+    min-height: 100vh;
+    height: 100%;
+    flex: 1;
     width: 100vw;
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
     transition: filter 0.2s linear;
   }
 
