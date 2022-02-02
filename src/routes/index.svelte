@@ -11,10 +11,25 @@
   <title>Przemek | Junior Frond End Developer</title>
 </svelte:head>
 
-<Stripes />
+<!-- <Stripes /> -->
 <div>
-  <h1 in:fade={{duration: 200}}>Hi, I'm <strong>Testing</strong></h1>
-  <h2 in:fade={{duration: 200}}>Front End Developer</h2>
+  <h1 in:fade={{ duration: 200 }}>Hi, I'm <strong>Testing</strong></h1>
+  <h2 in:fade={{ duration: 200 }}>Front End Developer</h2>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore consequatur tempore temporibus
+    obcaecati, sunt, consectetur reprehenderit ab quos ullam doloribus sed aut soluta. Odio ipsum
+    aspernatur excepturi dicta soluta accusamus.
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore consequatur tempore temporibus
+    obcaecati, sunt, consectetur reprehenderit ab quos ullam doloribus sed aut soluta. Odio ipsum
+    aspernatur excepturi dicta soluta accusamus.
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore consequatur tempore temporibus
+    obcaecati, sunt, consectetur reprehenderit ab quos ullam doloribus sed aut soluta. Odio ipsum
+    aspernatur excepturi dicta soluta accusamus.
+  </p>
 </div>
 
 <style>
@@ -27,6 +42,9 @@
     justify-content: center;
     flex-direction: column;
     color: var(--text-color);
+  }
+  p {
+    margin-top: 250px;
   }
   h1 {
     height: 2em;

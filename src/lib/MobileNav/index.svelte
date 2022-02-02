@@ -17,7 +17,7 @@
     { ishovered: false, title: 'Contact', href: '/contact' }
   ];
 
-  function to_x(node, { duration = 300, delay = 0, translate_dirction, rotate_dirction }) {
+  function to_x(node, { duration = 300, delay = 0, translate_dir, rotate_dir }) {
     const initial_width = node.offsetWidth;
     return {
       duration,
@@ -26,8 +26,23 @@
         const eased = quintInOut(t);
         return `
           width: ${(1 - eased) * 40 + initial_width}px;
-          --translateY:  ${translate_dirction === 'up' ? '-' : ''}${(1 - eased) * 14}px;
-          --rotate:  ${rotate_dirction === 'right' ? '-' : ''}${(1 - eased) * 45}deg;
+          transform: translateY(${translate_dir === 'up' ? '-' : ''}${(1 - eased) * 14}px) rotate(${rotate_dir === 'right' ? '-' : ''}${(1 - eased) * 45}deg);
+        `;
+      }
+    };
+  }
+  function to_l(
+    node,
+    { duration = 300, delay = 0, translate_dir, rotate_dir, width }
+  ) {
+    return {
+      duration,
+      delay,
+      css: (t) => {
+        const eased = quintInOut(t);
+        return `
+          width: ${eased * 10 + width}px;
+          transform: translateY(${translate_dir === 'up' ? '-' : ''}${(1 - eased) * 14}px) rotate(${rotate_dir === 'right' ? '-' : ''}${eased * 45}deg);
         `;
       }
     };
@@ -36,12 +51,16 @@
 
 <div role="button" on:click={() => set_hidden(!ishidden)}>
   {#if ishidden}
-    <div class="l" transition:to_x={{ translate_dirction: 'down', rotate_dirction: 'right' }} />
+    <div class="l" out:to_x={{ translate_dir: 'down', rotate_dir: 'right' }} />
     <div class="l" in:fade={{ duration: 100, delay: 200 }} out:fade={{ duration: 100 }} />
-    <div class="l" transition:to_x={{ translate_dirction: 'up', rotate_dirction: 'left' }} />
+    <div class="l" out:to_x={{ translate_dir: 'up', rotate_dir: 'left' }} />
   {:else}
+    <div class="x" out:to_l={{ translate_dir: 'up', rotate_dir: 'right', width: 40 }} />
     <div class="x" />
-    <div class="x" />
+    <div
+      class="x"
+      out:to_l={{ translate_dir: 'down', rotate_dir: 'left', width: 30 }}
+    />
   {/if}
 </div>
 {#if !ishidden}
@@ -75,11 +94,10 @@
 <style>
   [role='button'] {
     z-index: 4;
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    position: relative;
     width: 40px;
     height: 40px;
+    cursor: pointer;
   }
   [role='button'] div {
     z-index: 4;
@@ -88,9 +106,7 @@
     height: 3px;
     max-width: 40px;
     background: var(--text-color);
-    --rotate: 0deg;
-    --translateY: 0;
-    transform: translateY(var(--translateY)) rotate(var(--rotate));
+    will-change: transform, opacity, width;
   }
   [role='button'] .l:nth-child(1) {
     top: 5px;
@@ -107,16 +123,19 @@
   [role='button'] .x:nth-child(1) {
     top: 19px;
     width: 40px;
-    --rotate: 45deg;
+    transform: rotate(-45deg);
   }
   [role='button'] .x:nth-child(2) {
+    background: transparent;
+  }
+  [role='button'] .x:nth-child(3) {
     top: 19px;
     width: 40px;
-    --rotate: -45deg;
+    transform: rotate(45deg);
   }
   #asidewrapper {
     z-index: 2;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     width: 100vw;
@@ -135,6 +154,7 @@
     justify-content: center;
     align-items: center;
     background: var(--background-light);
+    box-shadow: -5px 0px 20px -10px rgba(0, 0, 0, 0.7);
   }
   nav {
     position: relative;
