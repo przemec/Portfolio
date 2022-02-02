@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&family=Concert+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400;700&family=Concert+One&display=swap');
 
 :root {
   font-family: 'Baloo Paaji 2', Arial, -apple-system,
@@ -10,6 +10,7 @@
   --background: #222;
   --background-light: #333;
   --text-color: #ddd;
+  scrollbar-color: var(--background-light) var(--background);
 }
 
 *,
@@ -24,23 +25,32 @@ body {
   background: var(--background);
   overflow-x: hidden;
 }
+body::-webkit-scrollbar {
+  width: 12px;
+}
+body::-webkit-scrollbar-thumb {    
+  background-color: var(--background-light);
+  border: 2px solid var(--background);
+  border-radius: 6px;
+}
+body::-webkit-scrollbar-track {
+  background: var(--background);
+}
 
+body.blurred {
+  overflow: hidden;
+}
 .blurred main {
   filter: blur(5px);
+}
+
+::selection {
+  background-color: var(--background-light);
+  color: var(--primary);
 }
 
 #svelte {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
-
-input,
-button {
-  font-size: inherit;
-  font-family: inherit;
-}
-
-button:focus:not(:focus-visible) {
-  outline: none;
 }
