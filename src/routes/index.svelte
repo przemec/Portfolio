@@ -4,14 +4,12 @@
 
 <script lang="ts">
   import { fade } from 'svelte/transition';
-  import Stripes from '$lib/Stripes.svelte';
 </script>
 
 <svelte:head>
   <title>Przemek | Junior Frond End Developer</title>
 </svelte:head>
 
-<!-- <Stripes /> -->
 <div>
   <h1 in:fade={{ duration: 200 }}>Hi, I'm <strong>Testing</strong></h1>
   <h2 in:fade={{ duration: 200 }}>Front End Developer</h2>
@@ -34,6 +32,7 @@
 
 <style>
   div {
+    overflow-x: hidden;
     margin: auto;
     height: 100%;
     width: 100%;

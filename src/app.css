@@ -7,7 +7,7 @@
   --primary: #eb4034;
   --secondary: #8f3f98;
   --background: #222;
-  --background-light: #333;
+  --background-light: #292929;
   --text-color: #ddd;
   --text-color-selected: #fff;
   scrollbar-color: var(--background-light) var(--background);
@@ -44,6 +44,7 @@ body.blurred {
   filter: blur(5px);
 }
 header.hasshadow {
+  background: var(--background-light) !important;
   box-shadow: 0 5px 15px -4px rgba(0, 0, 0, 0.7);
 }
 @media (min-width: 800px) {
