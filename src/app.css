@@ -9,6 +9,7 @@
   --background: #222;
   --background-light: #333;
   --text-color: #ddd;
+  --text-color-selected: #fff;
   scrollbar-color: var(--background-light) var(--background);
 }
 
