@@ -10,7 +10,8 @@
   --background-light: #292929;
   --text-color: #ddd;
   --text-color-selected: #fff;
-  scrollbar-color: var(--background-light) var(--background);
+  --scrollbar-thumb: rgba(255, 255, 255, 0.13);
+  scrollbar-color: var(--scrollbar-thumb) var(--background-light);
 }
 
 *,
@@ -29,12 +30,12 @@ body::-webkit-scrollbar {
   width: 12px;
 }
 body::-webkit-scrollbar-thumb {
-  background-color: var(--background-light);
-  border: 2px solid var(--background);
+  background-color: var(--scrollbar-thumb);
+  border: 2px solid var(--background-light);
   border-radius: 6px;
 }
 body::-webkit-scrollbar-track {
-  background: var(--background);
+  background: var(--background-light);
 }
 
 body.blurred {
