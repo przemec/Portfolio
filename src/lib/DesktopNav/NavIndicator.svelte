@@ -1,7 +1,7 @@
 <script>
   import { quintInOut } from 'svelte/easing';
   import { fade } from 'svelte/transition';
-  let stripes_delays = [100, 130, 160];
+  let stripes_delays = [0, 30, 60];
 
   function customfly(node, { duration, delay = 0 }) {
     return {

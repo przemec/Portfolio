@@ -60,4 +60,7 @@
     text-decoration: none;
     transition: color 0.2s linear;
   }
+  .tab a:hover {
+    color: var(--text-color-selected);
+  }
 </style>

@@ -1,7 +1,6 @@
 <script>
   import { quintInOut } from 'svelte/easing';
-  import { fade } from 'svelte/transition';
-  let stripes_delays = [100, 130, 160];
+  let stripes_delays = [0, 30, 60];
 
   function customfly(node, { duration, delay = 0 }) {
     return {
@@ -10,7 +9,7 @@
       css: (t) => {
         const eased = quintInOut(t);
         return `
-					--translateX: ${(1 - eased) * 30}vw;
+          transform: translateX(${(1 - eased) * 30}vw);
         `;
       }
     };
@@ -34,9 +33,7 @@
   }
   #navindicator div {
     position: absolute;
-    --translateY: -5px;
-    --translateX: 0;
-    transform: rotate(0deg) translateY(var(--translateY)) translateX(var(--translateX));
+    transform: translateX(0);
     width: 55%;
     height: 10px;
     border-radius: 5px;
@@ -44,15 +41,16 @@
   #navindicator div:nth-child(1) {
     right: -37%;
     background: var(--primary);
-    --translateY: -15px;
+    top: -16px;
   }
   #navindicator div:nth-child(2) {
     right: -30%;
     background: #eee;
+    top: -5px;
   }
   #navindicator div:nth-child(3) {
     right: -35%;
     background: var(--secondary);
-    --translateY: 5px;
+    top: 6px;
   }
 </style>
