@@ -41,7 +41,10 @@
     height: 90px;
     width: 100%;
     background: var(--background);
-    transition: top 0.3s, padding 0.3s, box-shadow 0.3s, height 0.3s;
+    transition: background 0.3s ease-in-out, top 0.3s, padding 0.3s, box-shadow 0.3s, height 0.3s;
+  }
+  header img {
+    z-index: 3;
   }
   header nav {
     height: 100%;

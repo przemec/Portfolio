@@ -1,6 +1,6 @@
 <script lang="ts">
   import { page } from '$app/stores';
-  import NavIndicator from './NavIndicator.svelte';
+  import NavIndicator from './components/NavIndicator.svelte';
   let tabs = [
     { ishovered: false, title: 'About', href: '/' },
     { ishovered: false, title: 'Skills', href: '/skills' },
