@@ -1,6 +1,3 @@
-<script>
-</script>
-
 <ul>
   <a href="https://www.linkedin.com/in/pszczepaniak0/" target="_blank">
     <svg viewBox="0 0 24 24">
@@ -44,13 +41,11 @@
 
 <style>
   ul {
-    position: absolute;
     width: 100%;
-    height: 50px;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    bottom: 10px;
     padding: 0;
   }
   a {
@@ -69,7 +64,7 @@
     transform: translateY(-6px);
   }
   a {
-    margin: 0 5px;
+    margin: 0 2%;
   }
   svg {
     width: 36px;

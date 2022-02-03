@@ -3,7 +3,7 @@
   import { fly, fade } from 'svelte/transition';
   import BurgerButton from './components/BurgerButton.svelte';
   import NavIndicator from './components/NavIndicator.svelte';
-  import LinksPanel from './components/LinksPanel.svelte';
+  import LinksPanel from '../LinksPanelHorizontal.svelte';
 
   let ishidden = true;
   let set_hidden = (v) => {
@@ -36,7 +36,9 @@
           </div>
         {/each}
       </nav>
-      <LinksPanel />
+      <footer>
+        <LinksPanel />
+      </footer>
     </aside>
   </div>
 {/if}
@@ -111,5 +113,12 @@
   }
   .tab.active a {
     font-size: 1.6em;
+  }
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    padding-bottom: 10px;
   }
 </style>

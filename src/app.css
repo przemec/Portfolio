@@ -45,13 +45,9 @@ body.blurred {
   filter: blur(5px);
 }
 header.hasshadow {
+  height: 60px !important;
   background: var(--background-light) !important;
   box-shadow: 0 5px 15px -4px rgba(0, 0, 0, 0.7);
-}
-@media (min-width: 800px) {
-  header.hasshadow {
-    height: 60px !important;
-  }
 }
 
 ::selection {

@@ -3,6 +3,7 @@
   import HideHeader from '../helpers/HideHeader';
   import MobileNav from '$lib/MobileNav/index.svelte';
   import DesktopNav from '$lib/DesktopNav/index.svelte';
+  import LinksPanelHorizontal from '$lib/LinksPanelHorizontal.svelte';
   import '../app.css';
   onMount(() => {
     HideHeader();
@@ -28,7 +29,10 @@
   </main>
 
   <footer>
-    <p>&copy Przemysław Szczepaniak</p>
+    <div id="linkscontainer">
+      <LinksPanelHorizontal />
+    </div>
+    <p>&copy 2022 | Designed & coded by Przemek Szczepaniak</p>
   </footer>
 </div>
 
@@ -39,9 +43,14 @@
     top: 0;
     left: 0;
     height: 90px;
-    width: 100%;
+    width: 100vw;
     background: var(--background);
     transition: background 0.3s ease-in-out, top 0.3s, padding 0.3s, box-shadow 0.3s, height 0.3s;
+  }
+  @media (min-width: 800px) {
+    header {
+      padding: 0 30px;
+    }
   }
   header img {
     z-index: 3;
@@ -60,9 +69,6 @@
     display: none;
   }
   @media (min-width: 800px) {
-    header {
-      padding: 0 30px;
-    }
     #mobile_nav {
       display: none;
     }
@@ -95,7 +101,27 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
     color: var(--text-color);
+    width: 100vw;
+    height: 140px;
+  }
+  @media (min-width: 800px) {
+    footer {
+      height: 80px;
+    }
+  }
+  footer p {
+    width: 100%;
+    letter-spacing: 0.1em;
+    text-align: center;
+  }
+  #linkscontainer {
+    width: 100%;
+    height: 50px;
+  }
+  @media (min-width: 800px) {
+    #linkscontainer {
+      display: none;
+    }
   }
 </style>
