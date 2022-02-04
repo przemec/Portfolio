@@ -87,12 +87,12 @@
   }
   #content {
     min-height: 100vh;
+    min-height: calc(100vh - 100px);
     display: flex;
     flex-direction: column;
     margin-top: 100px;
   }
   main {
-    min-height: 100vh;
     width: 100%;
     margin: 0 auto;
     flex: 1;
