@@ -4,13 +4,14 @@
   import smoothscroll from 'smoothscroll-polyfill';
   import HideHeader from '../helpers/HideHeader';
   import MobileNav from '$lib/MobileNav/index.svelte';
-  import DesktopNav from '$lib/DesktopNav/index.svelte';
   import LinksPanelHorizontal from '$lib/LinksPanelHorizontal.svelte';
+  import DesktopNav from '$lib/DesktopNav/index.svelte';
+  import LinksPanelVertical from '$lib/LinksPanelVertical.svelte';
   import '../app.css';
   onMount(() => {
     HideHeader();
     smoothscroll.polyfill();
-    document.querySelector($page.url.hash).scrollIntoView({behavior: 'smooth'});
+    document.querySelector($page.url.hash).scrollIntoView({ behavior: 'smooth' });
   });
 </script>
 
@@ -28,13 +29,15 @@
 </header>
 
 <div id="content">
-  <div id="verticalfiller" />
+  <div id="vertical_links">
+    <LinksPanelVertical />
+  </div>
   <main>
     <slot />
   </main>
 
   <footer>
-    <div id="linkscontainer">
+    <div id="footer_links">
       <LinksPanelHorizontal />
     </div>
     <p>&copy 2022 | Designed & coded by Przemek Szczepaniak</p>
@@ -107,18 +110,17 @@
       padding-left: 140px;
     }
   }
-  #verticalfiller {
+  #vertical_links {
     display: none;
     position: fixed;
     top: 50%;
     left: 0px;
-    height: 300px;
+    height: 260px;
     width: 120px;
     transform: translateY(-50%);
-    background: grey;
   }
   @media (min-width: 800px) {
-    #verticalfiller {
+    #vertical_links {
       display: initial;
     }
   }
@@ -141,12 +143,12 @@
     letter-spacing: 0.1em;
     text-align: center;
   }
-  #linkscontainer {
+  #footer_links {
     width: 100%;
     height: 50px;
   }
   @media (min-width: 800px) {
-    #linkscontainer {
+    #footer_links {
       display: none;
     }
   }
