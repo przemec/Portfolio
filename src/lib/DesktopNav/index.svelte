@@ -2,10 +2,10 @@
   import { page } from '$app/stores';
   import NavIndicator from './components/NavIndicator.svelte';
   let tabs = [
-    { ishovered: false, title: 'About', href: '/' },
-    { ishovered: false, title: 'Skills', href: '/skills' },
-    { ishovered: false, title: 'Projects', href: '/projects' },
-    { ishovered: false, title: 'Contact', href: '/contact' }
+    { ishovered: false, title: 'About', href: 'about' },
+    { ishovered: false, title: 'Skills', href: 'skills' },
+    { ishovered: false, title: 'Projects', href: 'projects' },
+    { ishovered: false, title: 'Contact', href: 'contact' }
   ];
 </script>
 
@@ -19,7 +19,7 @@
       on:click={() => (tab.ishovered = false)}
     >
       {#if $page.url.pathname === tab.href || tab.ishovered}<NavIndicator />{/if}
-      <a sveltekit:prefetch href={tab.href}>{tab.title}</a>
+      <div class="link" on:click={()=>document.getElementById(tab.href).scrollIntoView({ behavior: 'smooth' })}>{tab.title}</div>
     </div>
   {/each}
 </nav>
@@ -46,7 +46,7 @@
     transform: translateY(6px);
   }
 
-  .tab a {
+  .tab .link {
     display: flex;
     height: 3em;
     text-align: center;
@@ -60,7 +60,7 @@
     text-decoration: none;
     transition: color 0.2s linear;
   }
-  .tab a:hover {
+  .tab .link:hover {
     color: var(--text-color-selected);
   }
 </style>

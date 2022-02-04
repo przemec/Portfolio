@@ -24,6 +24,7 @@
 </header>
 
 <div id="content">
+  <div id="verticalfiller" />
   <main>
     <slot />
   </main>
@@ -88,14 +89,35 @@
   }
   main {
     min-height: 100vh;
-    height: 100%;
+    width: 100%;
+    margin: 0 auto;
     flex: 1;
-    width: 100vw;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
     transition: filter 0.2s linear;
   }
-
+  @media (min-width: 800px) {
+    main {
+      padding-left: 140px;
+    }
+  }
+  #verticalfiller {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 0px;
+    height: 300px;
+    width: 120px;
+    transform: translateY(-50%);
+    background: grey;
+  }
+  @media (min-width: 800px) {
+    #verticalfiller {
+      display: initial;
+    }
+  }
   footer {
     display: flex;
     flex-direction: column;
