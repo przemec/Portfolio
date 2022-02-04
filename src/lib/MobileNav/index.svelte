@@ -12,10 +12,10 @@
   };
 
   let tabs = [
-    { title: 'About', href: '/' },
-    { title: 'Skills', href: '/skills' },
-    { title: 'Projects', href: '/projects' },
-    { title: 'Contact', href: '/contact' }
+    { title: 'About', href: '#about' },
+    { title: 'Skills', href: '#skills' },
+    { title: 'Projects', href: '#projects' },
+    { title: 'Contact', href: '#contact' }
   ];
 </script>
 
@@ -32,7 +32,17 @@
         {#each tabs as tab}
           <div class="tab" class:active={$page.url.pathname === tab.href}>
             {#if $page.url.pathname === tab.href}<NavIndicator />{/if}
-            <a sveltekit:prefetch href={tab.href} on:click={() => set_hidden(true)}>{tab.title}</a>
+            <a
+              href={tab.href}
+              on:click={(e) => {
+                set_hidden(true);
+                e.preventDefault();
+                document.querySelector(tab.href).scrollIntoView({ behavior: 'smooth' });
+                window.location.replace(tab.href);
+              }}
+            >
+              {tab.title}
+            </a>
           </div>
         {/each}
       </nav>

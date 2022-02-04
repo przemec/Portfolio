@@ -2,10 +2,10 @@
   import { page } from '$app/stores';
   import NavIndicator from './components/NavIndicator.svelte';
   let tabs = [
-    { ishovered: false, title: 'About', href: 'about' },
-    { ishovered: false, title: 'Skills', href: 'skills' },
-    { ishovered: false, title: 'Projects', href: 'projects' },
-    { ishovered: false, title: 'Contact', href: 'contact' }
+    { ishovered: false, title: 'About', href: '#about' },
+    { ishovered: false, title: 'Skills', href: '#skills' },
+    { ishovered: false, title: 'Projects', href: '#projects' },
+    { ishovered: false, title: 'Contact', href: '#contact' }
   ];
 </script>
 
@@ -19,7 +19,16 @@
       on:click={() => (tab.ishovered = false)}
     >
       {#if $page.url.pathname === tab.href || tab.ishovered}<NavIndicator />{/if}
-      <div class="link" on:click={()=>document.getElementById(tab.href).scrollIntoView({ behavior: 'smooth' })}>{tab.title}</div>
+      <a
+        href={tab.href}
+        on:click={(e) => {
+          e.preventDefault();
+          document.querySelector(tab.href).scrollIntoView({behavior: 'smooth'});
+          window.location.replace(tab.href);
+        }}
+      >
+        {tab.title}
+      </a>
     </div>
   {/each}
 </nav>
@@ -46,7 +55,7 @@
     transform: translateY(6px);
   }
 
-  .tab .link {
+  .tab a {
     display: flex;
     height: 3em;
     text-align: center;
@@ -60,7 +69,7 @@
     text-decoration: none;
     transition: color 0.2s linear;
   }
-  .tab .link:hover {
+  .tab a:hover {
     color: var(--text-color-selected);
   }
 </style>

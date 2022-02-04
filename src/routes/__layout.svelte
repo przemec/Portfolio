@@ -1,5 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { page } from '$app/stores';
+  import smoothscroll from 'smoothscroll-polyfill';
   import HideHeader from '../helpers/HideHeader';
   import MobileNav from '$lib/MobileNav/index.svelte';
   import DesktopNav from '$lib/DesktopNav/index.svelte';
@@ -7,6 +9,8 @@
   import '../app.css';
   onMount(() => {
     HideHeader();
+    smoothscroll.polyfill();
+    document.querySelector($page.url.hash).scrollIntoView({behavior: 'smooth'});
   });
 </script>
 
