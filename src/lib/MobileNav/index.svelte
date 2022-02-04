@@ -38,7 +38,7 @@
                 set_hidden(true);
                 e.preventDefault();
                 document.querySelector(tab.href).scrollIntoView({ behavior: 'smooth' });
-                window.location.replace(tab.href);
+                window.history.replaceState(null, '', tab.href);
               }}
             >
               {tab.title}

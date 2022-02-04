@@ -23,8 +23,8 @@
         href={tab.href}
         on:click={(e) => {
           e.preventDefault();
-          document.querySelector(tab.href).scrollIntoView({behavior: 'smooth'});
-          window.location.replace(tab.href);
+          document.querySelector(tab.href).scrollIntoView({ behavior: 'smooth' });
+          window.history.replaceState(null, '', tab.href);
         }}
       >
         {tab.title}
