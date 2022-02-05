@@ -57,7 +57,7 @@
 <div role="button" on:click={() => set_hidden(!ishidden)}>
   {#if ishidden}
     <span class="hamburger" out:to_exit={{ translate_dir: 'down', rotate_dir: 'right' }} />
-    <span class="hamburger" in:fade={{ delay: 200 }} out:to_nav />
+    <span class="hamburger" in:fade={{ delay: 200 }} out:fade={{ duration: 100 }} />
     <span class="hamburger" out:to_exit={{ translate_dir: 'up', rotate_dir: 'left' }} />
   {:else}
     <span class="exit" out:to_burger={{ translate_dir: 'up', rotate_dir: 'right', width: 40 }} />
