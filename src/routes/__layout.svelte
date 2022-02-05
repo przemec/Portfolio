@@ -29,12 +29,12 @@
 </header>
 
 <div id="content">
-  <div id="vertical_links">
-    <LinksPanelVertical />
-  </div>
   <main>
     <slot />
   </main>
+  <div id="vertical_links">
+    <LinksPanelVertical />
+  </div>
 
   <footer>
     <div id="footer_links">
@@ -117,7 +117,7 @@
     display: none;
     position: fixed;
     top: 50%;
-    left: 0px;
+    right: 0px;
     height: 260px;
     width: 120px;
     transform: translateY(-50%);

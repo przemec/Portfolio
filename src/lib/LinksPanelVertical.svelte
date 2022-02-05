@@ -105,10 +105,9 @@
   a {
     width: 100%;
     height: 80px;
-    padding: 20px 0 20px 40px;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
 
     div {
       position: relative;
@@ -119,13 +118,13 @@
     }
     &:hover div {
       background: var(--primary);
-      transform: translateX(14px);
+      transform: translateX(-14px);
     }
     &.semihoveredtop div,
     &.semihoveredbottom div {
       box-shadow: 3px 3px 3px #fff;
       background: var(--text-color);
-      transform: translateX(4px);
+      transform: translateX(-4px);
     }
     div::before {
       content: '';
@@ -136,7 +135,7 @@
       width: 100%;
       opacity: 0;
       transition: opacity 0.3s ease-in-out;
-      background: linear-gradient(-20deg, var(--primary) 0%, var(--text-color) 60%);
+      background: linear-gradient(20deg, var(--primary) 0%, var(--text-color) 60%);
     }
     div::after {
       content: '';
@@ -147,7 +146,7 @@
       width: 100%;
       opacity: 0;
       transition: opacity 0.3s ease-in-out;
-      background: linear-gradient(20deg, var(--text-color) 40%, var(--primary));
+      background: linear-gradient(-20deg, var(--text-color) 40%, var(--primary));
     }
     &.semihoveredbottom div::before,
     &.semihoveredtop div::after {
