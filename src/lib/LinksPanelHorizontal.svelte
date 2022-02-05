@@ -39,7 +39,7 @@
   </a>
 </ul>
 
-<style>
+<style lang="scss">
   ul {
     width: 100%;
     height: 100%;
@@ -56,15 +56,14 @@
     height: 40px;
     color: var(--text-color);
     transition: color 0.2s, transform 0.2s;
-  }
-  a:hover {
-    color: var(--text-color-selected);
-  }
-  a:hover svg {
-    transform: translateY(-6px);
-  }
-  a {
     margin: 0 2%;
+
+    &:hover {
+      color: var(--text-color-selected);
+    }
+    &:hover svg {
+      transform: translateY(-6px);
+    }
   }
   svg {
     width: 36px;

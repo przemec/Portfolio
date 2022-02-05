@@ -20,7 +20,7 @@
   </p>
 </section>
 
-<style>
+<style lang="scss">
   section {
     min-height: calc(100vh - 100px);
     margin-bottom: 20px;

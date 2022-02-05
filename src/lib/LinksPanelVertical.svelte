@@ -92,7 +92,7 @@
   </a>
 </ul>
 
-<style>
+<style lang="scss">
   ul {
     width: 100%;
     height: 100%;
@@ -109,68 +109,69 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  a div {
-    position: relative;
-    background: var(--text-color);
-    width: 36px;
-    height: 36px;
-    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
-  }
-  a:hover div {
-    background: var(--primary);
-    transform: translateX(14px);
-  }
-  a.semihoveredtop div,
-  a.semihoveredbottom div {
-    box-shadow: 3px 3px 3px #fff;
-    background: var(--text-color);
-    transform: translateX(4px);
-  }
-  a div::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    background: linear-gradient(-20deg, var(--primary) 0%, var(--text-color) 60%);
-  }
-  a div::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    background: linear-gradient(20deg, var(--text-color) 40%, var(--primary));
-  }
-  a.semihoveredbottom div::before,
-  a.semihoveredtop div::after {
-    opacity: 1;
-  }
-  a#link-gh div,
-  a#link-gh div::after {
-    clip-path: url(#clip-gh);
-  }
-  a#link-li div,
-  a#link-li div::after {
-    clip-path: url(#clip-li);
-  }
-  a#link-bd div,
-  a#link-bd div::after {
-    clip-path: url(#clip-bd);
-  }
-  a#link-ig div,
-  a#link-ig div::after {
-    clip-path: url(#clip-ig);
-  }
-  a svg {
-    width: 0;
-    height: 0;
+
+    div {
+      position: relative;
+      background: var(--text-color);
+      width: 36px;
+      height: 36px;
+      transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+    &:hover div {
+      background: var(--primary);
+      transform: translateX(14px);
+    }
+    &.semihoveredtop div,
+    &.semihoveredbottom div {
+      box-shadow: 3px 3px 3px #fff;
+      background: var(--text-color);
+      transform: translateX(4px);
+    }
+    div::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      background: linear-gradient(-20deg, var(--primary) 0%, var(--text-color) 60%);
+    }
+    div::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      background: linear-gradient(20deg, var(--text-color) 40%, var(--primary));
+    }
+    &.semihoveredbottom div::before,
+    &.semihoveredtop div::after {
+      opacity: 1;
+    }
+    &#link-gh div,
+    &#link-gh div::after {
+      clip-path: url(#clip-gh);
+    }
+    &#link-li div,
+    &#link-li div::after {
+      clip-path: url(#clip-li);
+    }
+    &#link-bd div,
+    &#link-bd div::after {
+      clip-path: url(#clip-bd);
+    }
+    &#link-ig div,
+    &#link-ig div::after {
+      clip-path: url(#clip-ig);
+    }
+    svg {
+      width: 0;
+      height: 0;
+    }
   }
 </style>

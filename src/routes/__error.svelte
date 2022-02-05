@@ -13,7 +13,7 @@
   <a href="/">Return to main page</a>
 </section>
 
-<style>
+<style lang="scss">
   section {
     color: var(--text-color);
     min-height: 30vh;
@@ -45,9 +45,10 @@
     font-size: 1.5rem;
     text-align: center;
     text-decoration: none;
-  }
-  a:hover {
-    color: var(--secondary);
-    text-decoration: underline;
+
+    &:hover {
+      color: var(--secondary);
+      text-decoration: underline;
+    }
   }
 </style>

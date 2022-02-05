@@ -22,7 +22,7 @@
   {/each}
 </div>
 
-<style>
+<style lang="scss">
   #navindicator {
     z-index: -1;
     position: absolute;
@@ -30,27 +30,28 @@
     left: 0;
     width: 100%;
     transform: translateY(-50%);
-  }
-  #navindicator div {
-    position: absolute;
-    transform: translateX(0);
-    width: 55%;
-    height: 10px;
-    border-radius: 5px;
-  }
-  #navindicator div:nth-child(1) {
-    right: -37%;
-    background: var(--primary);
-    top: -16px;
-  }
-  #navindicator div:nth-child(2) {
-    right: -30%;
-    background: #eee;
-    top: -5px;
-  }
-  #navindicator div:nth-child(3) {
-    right: -35%;
-    background: var(--secondary);
-    top: 6px;
+    
+    div {
+      position: absolute;
+      transform: translateX(0);
+      width: 55%;
+      height: 10px;
+      border-radius: 5px;
+    }
+    div:nth-child(1) {
+      right: -37%;
+      background: var(--primary);
+      top: -16px;
+    }
+    div:nth-child(2) {
+      right: -30%;
+      background: #eee;
+      top: -5px;
+    }
+    div:nth-child(3) {
+      right: -35%;
+      background: var(--secondary);
+      top: 6px;
+    }
   }
 </style>

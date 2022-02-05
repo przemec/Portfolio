@@ -27,7 +27,7 @@
   <div in:customfly={{ duration: 200, delay: 150, side: 'right' }} out:fade={{ duration: 100 }} />
 </div>
 
-<style>
+<style lang="scss">
   .stripes {
     position: absolute;
     z-index: -1;
@@ -36,35 +36,36 @@
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-  }
-  .stripes div {
-    position: absolute;
-    top: 50%;
-    --translateY: 0;
-    --translateX: 0;
-    transform: translateY(var(--translateY)) translateX(var(--translateX));
-    width: 13vw;
-    height: 20px;
-    border-radius: 5px;
-  }
-  .stripes#stripesleft div {
-    left: -10px;
-  }
-  .stripes#stripesright div {
-    right: -10px;
-  }
-  .stripes div:nth-child(1) {
-    background: var(--primary);
-    --translateY: -31px;
-    width: 9vw;
-  }
-  .stripes div:nth-child(2) {
-    background: #eee;
-    --translateY: -10px;
-  }
-  .stripes div:nth-child(3) {
-    background: var(--secondary);
-    --translateY: 11px;
-    width: 11vw;
+
+    div {
+      position: absolute;
+      top: 50%;
+      --translateY: 0;
+      --translateX: 0;
+      transform: translateY(var(--translateY)) translateX(var(--translateX));
+      width: 13vw;
+      height: 20px;
+      border-radius: 5px;
+    }
+    &#stripesleft div {
+      left: -10px;
+    }
+    &#stripesright div {
+      right: -10px;
+    }
+    div:nth-child(1) {
+      background: var(--primary);
+      --translateY: -31px;
+      width: 9vw;
+    }
+    div:nth-child(2) {
+      background: #eee;
+      --translateY: -10px;
+    }
+    div:nth-child(3) {
+      background: var(--secondary);
+      --translateY: 11px;
+      width: 11vw;
+    }
   }
 </style>

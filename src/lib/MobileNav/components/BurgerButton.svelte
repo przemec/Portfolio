@@ -66,7 +66,7 @@
   {/if}
 </div>
 
-<style>
+<style lang="scss">
   [role='button'] {
     z-index: 4;
     position: relative;
@@ -74,40 +74,41 @@
     height: 40px;
     cursor: pointer;
     overflow: visible;
-  }
-  [role='button'] span {
-    z-index: 4;
-    position: absolute;
-    right: 0px;
-    height: 3px;
-    max-width: 40px;
-    background: var(--text-color);
-    will-change: transform, opacity, width;
-  }
-  [role='button'] .hamburger:nth-child(1) {
-    top: 5px;
-    width: 40px;
-  }
-  [role='button'] .hamburger:nth-child(2) {
-    top: 19px;
-    width: 35px;
-    max-width: 80vw;
-  }
-  [role='button'] .hamburger:nth-child(3) {
-    top: 33px;
-    width: 30px;
-  }
-  [role='button'] .exit:nth-child(1) {
-    top: 19px;
-    width: 40px;
-    transform: rotate(-45deg);
-  }
-  [role='button'] .exit:nth-child(2) {
-    background: transparent;
-  }
-  [role='button'] .exit:nth-child(3) {
-    top: 19px;
-    width: 40px;
-    transform: rotate(45deg);
+
+    span {
+      z-index: 4;
+      position: absolute;
+      right: 0px;
+      height: 3px;
+      max-width: 40px;
+      background: var(--text-color);
+      will-change: transform, opacity, width;
+    }
+    .hamburger:nth-child(1) {
+      top: 5px;
+      width: 40px;
+    }
+    .hamburger:nth-child(2) {
+      top: 19px;
+      width: 35px;
+      max-width: 80vw;
+    }
+    .hamburger:nth-child(3) {
+      top: 33px;
+      width: 30px;
+    }
+    .exit:nth-child(1) {
+      top: 19px;
+      width: 40px;
+      transform: rotate(-45deg);
+    }
+    .exit:nth-child(2) {
+      background: transparent;
+    }
+    .exit:nth-child(3) {
+      top: 19px;
+      width: 40px;
+      transform: rotate(45deg);
+    }
   }
 </style>

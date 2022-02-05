@@ -23,7 +23,7 @@
   <h3 in:fade={{ duration: 200 }}>Front End Developer</h3>
 </section>
 
-<style>
+<style lang="scss">
   #p-logo {
     display: none;
     z-index: 3;
@@ -45,13 +45,14 @@
   @media (min-width: 800px) {
     #p-logo {
       display: initial;
-    }
-    #p-logo.logoinvisible {
-      animation: logoDisappear 0.3s forwards;
-    }
-    #p-logo.logovisible {
-      display: initial;
-      animation: logoAppear 0.3s;
+
+      &.logoinvisible {
+        animation: logoDisappear 0.3s forwards;
+      }
+      &.logovisible {
+        display: initial;
+        animation: logoAppear 0.3s;
+      }
     }
   }
   section {
@@ -69,12 +70,13 @@
     line-height: 3rem;
     font-size: 3rem;
     text-align: center;
-  }
-  h1 strong {
-    font-family: 'Concert One', cursive;
-    font-weight: bold;
-    text-shadow: 1px 1px var(--background), 2px 2px var(--primary);
-    letter-spacing: 0.1rem;
+
+    strong {
+      font-family: 'Concert One', cursive;
+      font-weight: bold;
+      text-shadow: 1px 1px var(--background), 2px 2px var(--primary);
+      letter-spacing: 0.1rem;
+    }
   }
   h2 {
     height: 2.4rem;

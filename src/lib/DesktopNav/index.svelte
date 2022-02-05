@@ -33,7 +33,7 @@
   {/each}
 </nav>
 
-<style>
+<style lang="scss">
   nav {
     position: relative;
     height: 100%;
@@ -50,26 +50,26 @@
     flex: 1;
     justify-content: center;
     transition: transform 0.2s ease-in-out;
-  }
-  .tab.active {
-    transform: translateY(6px);
-  }
 
-  .tab a {
-    display: flex;
-    height: 3em;
-    text-align: center;
-    align-items: center;
-    color: var(--text-color);
-    font-weight: 700;
-    font-size: 1.2em;
-    line-height: 3em;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    text-decoration: none;
-    transition: color 0.2s linear;
-  }
-  .tab a:hover {
-    color: var(--text-color-selected);
+    &.active {
+      transform: translateY(6px);
+    }
+    a {
+      display: flex;
+      height: 3em;
+      text-align: center;
+      align-items: center;
+      color: var(--text-color);
+      font-weight: 700;
+      font-size: 1.2em;
+      line-height: 3em;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      transition: color 0.2s linear;
+    }
+    a:hover {
+      color: var(--text-color-selected);
+    }
   }
 </style>

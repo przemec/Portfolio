@@ -44,7 +44,7 @@
   </footer>
 </div>
 
-<style>
+<style lang="scss">
   header {
     z-index: 2;
     position: fixed;
@@ -54,23 +54,24 @@
     width: 100vw;
     background: var(--background);
     transition: background 0.3s ease-in-out, top 0.3s, padding 0.3s, box-shadow 0.3s, height 0.3s;
+
+    img {
+      z-index: 3;
+    }
+    nav {
+      height: 100%;
+      width: 100%;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
   @media (min-width: 800px) {
     header {
       padding: 0 30px;
     }
-  }
-  header img {
-    z-index: 3;
-  }
-  header nav {
-    height: 100%;
-    width: 100%;
-    padding: 0 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
   }
   #desktop_nav,
   #filler {
@@ -131,16 +132,17 @@
     color: var(--text-color);
     width: 100vw;
     height: 140px;
+
+    p {
+      width: 100%;
+      letter-spacing: 0.1em;
+      text-align: center;
+    }
   }
   @media (min-width: 800px) {
     footer {
       height: 80px;
     }
-  }
-  footer p {
-    width: 100%;
-    letter-spacing: 0.1em;
-    text-align: center;
   }
   #footer_links {
     width: 100%;

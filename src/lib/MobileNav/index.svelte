@@ -53,7 +53,7 @@
   </div>
 {/if}
 
-<style>
+<style lang="scss">
   #asidewrapper {
     z-index: 2;
     position: fixed;
@@ -103,26 +103,26 @@
     flex: 1;
     justify-content: center;
     transition: transform 0.2s ease-in-out;
-  }
 
-  .tab a {
-    height: 3em;
-    width: 100%;
-    text-align: center;
-    color: var(--text-color);
-    font-size: 1.2em;
-    line-height: 3em;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    text-decoration: none;
-    transition: color 0.2s, font-size 0.2s;
-  }
-  .tab a:hover {
-    font-weight: bold;
-    color: var(--text-color-selected);
-  }
-  .tab.active a {
-    font-size: 1.6em;
+    a {
+      height: 3em;
+      width: 100%;
+      text-align: center;
+      color: var(--text-color);
+      font-size: 1.2em;
+      line-height: 3em;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      transition: color 0.2s, font-size 0.2s;
+    }
+    a:hover {
+      font-weight: bold;
+      color: var(--text-color-selected);
+    }
+    &.active a {
+      font-size: 1.6em;
+    }
   }
   footer {
     position: absolute;
