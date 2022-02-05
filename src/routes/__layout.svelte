@@ -17,7 +17,7 @@
 
 <header>
   <nav>
-    <img src="favicon.png" alt="logo" width="40" height="40" />
+    <div id="logo">logo</div>
     <div id="desktop_nav">
       <DesktopNav />
     </div>
@@ -51,17 +51,20 @@
     top: 0;
     left: 0;
     height: 90px;
-    width: 100vw;
+    width: 100%;
+    padding: 0 20px;
     background: var(--background);
     transition: background 0.3s ease-in-out, top 0.3s, padding 0.3s, box-shadow 0.3s, height 0.3s;
 
-    img {
+    #logo {
       z-index: 3;
+      width: 40px;
+      height: 40px;
+      background: var(--primary);
     }
     nav {
       height: 100%;
       width: 100%;
-      padding: 0 20px;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -70,7 +73,7 @@
   }
   @media (min-width: 800px) {
     header {
-      padding: 0 30px;
+      padding: 0 40px;
     }
   }
   #desktop_nav,

@@ -105,10 +105,10 @@
   a {
     width: 100%;
     height: 80px;
-    padding: 20px 0;
+    padding: 20px 0 20px 40px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 
     div {
       position: relative;
