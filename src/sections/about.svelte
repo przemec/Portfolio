@@ -1,6 +1,5 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { fade } from 'svelte/transition';
 
   let islogovisible = false;
   onMount(() => {
@@ -16,11 +15,11 @@
 
 <div id="p-logo" class:logovisible={islogovisible} class:logoinvisible={!islogovisible}>P</div>
 <section id="about">
-  <h2 in:fade={{ duration: 200 }}>Hello,</h2>
-  <h1 in:fade={{ duration: 200 }} id="name">
+  <h2>Hello,</h2>
+  <h1 id="name">
     I'm <strong>Przemek</strong>,
   </h1>
-  <h3 in:fade={{ duration: 200 }}>Front End Developer</h3>
+  <h3>Front End Developer</h3>
 </section>
 
 <style lang="scss">
@@ -56,31 +55,41 @@
     }
   }
   section {
-    min-height: calc(100vh);
+    min-height: 100vh;
     width: 100%;
-    padding: 100px 20px;
+    padding: 90px 20px 200px;
     display: flex;
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
     color: var(--text-color);
   }
-  h1 {
-    height: 3rem;
-    line-height: 3rem;
+  @media (min-width: 800px) {
+    section {
+      padding: 90px 20px;
+      align-items: center;
+    }
+  }
+  h2 {
+    height: 4rem;
     font-size: 3rem;
+    text-align: center;
+  }
+  h1 {
+    height: 5rem;
+    font-size: 3.5rem;
     text-align: center;
 
     strong {
       font-family: 'Concert One', cursive;
       font-weight: bold;
-      text-shadow: 1px 1px var(--background), 2px 2px var(--primary);
+      text-shadow: 0.05rem 0.1rem var(--background), 0.2rem 0.1rem var(--primary);
       letter-spacing: 0.1rem;
     }
   }
-  h2 {
-    height: 2.4rem;
-    line-height: 2.4rem;
+  h3 {
+    margin-top: 0.4rem;
+    height: 3rem;
     font-size: 2rem;
     text-align: center;
   }

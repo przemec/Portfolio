@@ -110,7 +110,7 @@
   }
   @media (min-width: 800px) {
     main {
-      padding-left: 140px;
+      padding: 0 140px;
     }
   }
   #vertical_links {
