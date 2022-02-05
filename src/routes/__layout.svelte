@@ -2,7 +2,7 @@
   import { onMount } from 'svelte';
   import { page } from '$app/stores';
   import smoothscroll from 'smoothscroll-polyfill';
-  import HideHeader from '../helpers/HideHeader';
+  import HideHeader from '$helpers/HideHeader';
   import MobileNav from '$lib/MobileNav/index.svelte';
   import LinksPanelHorizontal from '$lib/LinksPanelHorizontal.svelte';
   import DesktopNav from '$lib/DesktopNav/index.svelte';
