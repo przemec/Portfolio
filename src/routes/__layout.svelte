@@ -11,7 +11,7 @@
   onMount(() => {
     HideHeader();
     smoothscroll.polyfill();
-    document.querySelector($page.url.hash).scrollIntoView({ behavior: 'smooth' });
+    $page.url.hash && document.querySelector($page.url.hash).scrollIntoView({ behavior: 'smooth' });
   });
 </script>
 
@@ -93,7 +93,6 @@
     min-height: calc(100vh - 100px);
     display: flex;
     flex-direction: column;
-    margin-top: 100px;
   }
   main {
     width: 100%;

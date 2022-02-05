@@ -109,14 +109,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: color 0.2s ease-in-out, transform 0.2s;
   }
   a div {
     position: relative;
     background: var(--text-color);
     width: 36px;
     height: 36px;
-    transition: color 0.3s, transform 0.3s;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
   }
   a:hover div {
     background: var(--primary);
@@ -150,9 +149,7 @@
     transition: opacity 0.3s ease-in-out;
     background: linear-gradient(20deg, var(--text-color) 40%, var(--primary));
   }
-  a.semihoveredbottom div::before {
-    opacity: 1;
-  }
+  a.semihoveredbottom div::before,
   a.semihoveredtop div::after {
     opacity: 1;
   }
