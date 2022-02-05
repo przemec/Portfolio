@@ -10,6 +10,6 @@
 </svelte:head>
 
 <About />
-<Contact />
-<Projects />
 <Skills />
+<Projects />
+<Contact />

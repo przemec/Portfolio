@@ -22,6 +22,7 @@
 
 <style>
   section {
+    min-height: calc(100vh - 100px);
     margin-bottom: 20px;
     color: var(--text-color);
   }
