@@ -83,7 +83,7 @@
     strong {
       font-family: 'Concert One', cursive;
       font-weight: bold;
-      text-shadow: 0.05rem 0.1rem var(--background), 0.2rem 0.1rem var(--primary);
+      text-shadow: 0.1rem 0.05rem var(--background), 0.2rem 0.1rem var(--primary);
       letter-spacing: 0.1rem;
     }
   }
