@@ -8,7 +8,27 @@
   import DesktopNav from '$lib/DesktopNav/index.svelte';
   import LinksPanelVertical from '$lib/LinksPanelVertical.svelte';
   import '../app.css';
+
+  let active_section = 'about';
+  let sections = ['about', 'skills', 'projects', 'contact'];
   onMount(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.intersectionRatio > 0.7) {
+            active_section = entry.target.id;
+          }
+        });
+      },
+      {
+        threshold: 0.7
+      }
+    );
+    sections.forEach((section) => {
+      const namecontainer = document.querySelector(`#${section}`);
+      observer.observe(namecontainer);
+    });
+
     HideHeader();
     smoothscroll.polyfill();
     $page.url.hash && document.querySelector($page.url.hash).scrollIntoView({ behavior: 'smooth' });
@@ -19,10 +39,10 @@
   <nav>
     <div id="logo">logo</div>
     <div id="desktop_nav">
-      <DesktopNav />
+      <DesktopNav {active_section} />
     </div>
     <div id="mobile_nav">
-      <MobileNav />
+      <MobileNav {active_section} />
     </div>
     <div id="filler" />
   </nav>
@@ -133,7 +153,7 @@
     justify-content: center;
     align-items: center;
     color: var(--text-color);
-    width: 100vw;
+    width: 100%;
     height: 140px;
 
     p {

@@ -1,11 +1,12 @@
 <script lang="ts">
-  import { page } from '$app/stores';
   import NavIndicator from './components/NavIndicator.svelte';
+
+  export let active_section;
   let tabs = [
-    { ishovered: false, title: 'About', href: '#about' },
-    { ishovered: false, title: 'Skills', href: '#skills' },
-    { ishovered: false, title: 'Projects', href: '#projects' },
-    { ishovered: false, title: 'Contact', href: '#contact' }
+    { ishovered: false, title: 'about', href: '#about' },
+    { ishovered: false, title: 'skills', href: '#skills' },
+    { ishovered: false, title: 'projects', href: '#projects' },
+    { ishovered: false, title: 'contact', href: '#contact' }
   ];
 </script>
 
@@ -13,12 +14,12 @@
   {#each tabs as tab}
     <div
       class="tab"
-      class:active={$page.url.pathname === tab.href}
+      class:active={active_section === tab.title}
       on:mouseenter={() => (tab.ishovered = true)}
       on:mouseleave={() => (tab.ishovered = false)}
       on:click={() => (tab.ishovered = false)}
     >
-      {#if $page.url.pathname === tab.href || tab.ishovered}<NavIndicator />{/if}
+      {#if active_section === tab.title || tab.ishovered}<NavIndicator />{/if}
       <a
         href={tab.href}
         on:click={(e) => {

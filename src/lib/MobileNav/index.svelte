@@ -1,22 +1,22 @@
 <script lang="ts">
-  import { page } from '$app/stores';
   import { fly, fade } from 'svelte/transition';
   import BurgerButton from './components/BurgerButton.svelte';
   import NavIndicator from './components/NavIndicator.svelte';
   import LinksPanel from '../LinksPanelHorizontal.svelte';
+
+  export let active_section;
+  let tabs = [
+    { title: 'about', href: '#about' },
+    { title: 'skills', href: '#skills' },
+    { title: 'projects', href: '#projects' },
+    { title: 'contact', href: '#contact' }
+  ];
 
   let ishidden = true;
   let set_hidden = (v) => {
     document.body.classList.toggle('blurred');
     ishidden = v;
   };
-
-  let tabs = [
-    { title: 'About', href: '#about' },
-    { title: 'Skills', href: '#skills' },
-    { title: 'Projects', href: '#projects' },
-    { title: 'Contact', href: '#contact' }
-  ];
 </script>
 
 <BurgerButton {set_hidden} {ishidden} />
@@ -30,8 +30,8 @@
     >
       <nav>
         {#each tabs as tab}
-          <div class="tab" class:active={$page.url.pathname === tab.href}>
-            {#if $page.url.pathname === tab.href}<NavIndicator />{/if}
+          <div class="tab" class:active={active_section === tab.title}>
+            {#if active_section === tab.title}<NavIndicator />{/if}
             <a
               href={tab.href}
               on:click={(e) => {
@@ -121,6 +121,8 @@
       color: var(--text-color-selected);
     }
     &.active a {
+      color: var(--text-color-selected);
+      font-weight: bold;
       font-size: 1.6em;
     }
   }

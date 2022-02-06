@@ -114,6 +114,7 @@
       background: var(--text-color);
       width: 36px;
       height: 36px;
+      border-radius: 5px;
       transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
     }
     &:hover div {
@@ -133,6 +134,7 @@
       left: 0;
       height: 100%;
       width: 100%;
+      border-radius: 5px;
       opacity: 0;
       transition: opacity 0.3s ease-in-out;
       background: linear-gradient(20deg, var(--primary) 0%, var(--text-color) 60%);
@@ -144,6 +146,7 @@
       left: 0;
       height: 100%;
       width: 100%;
+      border-radius: 5px;
       opacity: 0;
       transition: opacity 0.3s ease-in-out;
       background: linear-gradient(-20deg, var(--text-color) 40%, var(--primary));
