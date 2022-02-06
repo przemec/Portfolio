@@ -2,10 +2,6 @@
   import { page } from '$app/stores';
 </script>
 
-<svelte:head>
-  <title>Przemek | Junior Frond End Developer</title>
-</svelte:head>
-
 <section>
   <h1>{$page.status}</h1>
   <h2>Page not found</h2>

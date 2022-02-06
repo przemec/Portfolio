@@ -35,6 +35,10 @@
   });
 </script>
 
+<svelte:head>
+  <title>Przemek | Front End Developer</title>
+</svelte:head>
+
 <header>
   <nav>
     <div id="logo">logo</div>

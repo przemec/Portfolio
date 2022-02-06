@@ -5,10 +5,6 @@
   import Skills from '$sections/skills.svelte';
 </script>
 
-<svelte:head>
-  <title>Przemek | Junior Frond End Developer</title>
-</svelte:head>
-
 <About />
 <Skills />
 <Projects />
