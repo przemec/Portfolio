@@ -9,7 +9,7 @@
   import LinksPanelVertical from '$lib/LinksPanelVertical.svelte';
   import '../app.css';
 
-  let active_section = 'about';
+  let active_section = '';
   let sections = ['about', 'skills', 'projects', 'contact'];
   onMount(() => {
     const observer = new IntersectionObserver(
@@ -25,8 +25,8 @@
       }
     );
     sections.forEach((section) => {
-      const namecontainer = document.querySelector(`#${section}`);
-      observer.observe(namecontainer);
+      const section_element = document.querySelector(`#${section}`);
+      if (section_element) observer.observe(section_element);
     });
 
     HideHeader();

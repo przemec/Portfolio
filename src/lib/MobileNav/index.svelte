@@ -1,16 +1,12 @@
 <script lang="ts">
+  import { page } from '$app/stores';
   import { fly, fade } from 'svelte/transition';
   import BurgerButton from './components/BurgerButton.svelte';
   import NavIndicator from './components/NavIndicator.svelte';
   import LinksPanel from '../LinksPanelHorizontal.svelte';
 
   export let active_section;
-  let tabs = [
-    { title: 'about', href: '#about' },
-    { title: 'skills', href: '#skills' },
-    { title: 'projects', href: '#projects' },
-    { title: 'contact', href: '#contact' }
-  ];
+  let tabs = ['about', 'skills', 'projects', 'contact'];
 
   let ishidden = true;
   let set_hidden = (v) => {
@@ -30,18 +26,18 @@
     >
       <nav>
         {#each tabs as tab}
-          <div class="tab" class:active={active_section === tab.title}>
-            {#if active_section === tab.title}<NavIndicator />{/if}
+          <div class="tab" class:active={active_section === tab}>
+            {#if active_section === tab}<NavIndicator />{/if}
             <a
-              href={tab.href}
+              href={`/#${tab}`}
               on:click={(e) => {
                 set_hidden(true);
-                e.preventDefault();
-                document.querySelector(tab.href).scrollIntoView({ behavior: 'smooth' });
-                window.history.replaceState(null, '', tab.href);
+                $page.url.pathname === '/' && e.preventDefault();
+                document.querySelector(`#${tab}`)?.scrollIntoView({ behavior: 'smooth' });
+                window.history.replaceState(null, '', `#${tab}`);
               }}
             >
-              {tab.title}
+              {tab}
             </a>
           </div>
         {/each}

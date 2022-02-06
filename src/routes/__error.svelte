@@ -7,8 +7,8 @@
 </svelte:head>
 
 <section>
-  <h1><strong>{$page.status}</strong></h1>
-  <h1>Page not found</h1>
+  <h1>{$page.status}</h1>
+  <h2>Page not found</h2>
   <p>Looks like the link you entered may be broken or the page may have been removed.</p>
   <a href="/">Return to main page</a>
 </section>
@@ -18,7 +18,7 @@
     color: var(--text-color);
     min-height: 30vh;
     width: 100%;
-    padding: 30px;
+    padding: 110px 30px 30px;
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -26,14 +26,14 @@
     align-items: flex-start;
   }
   h1 {
-    font-size: 3rem;
-    height: 3rem;
-    margin-bottom: 1rem;
-    line-height: 3rem;
-  }
-  strong {
     font-size: 5rem;
     color: var(--primary);
+    line-height: 5rem;
+  }
+  h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    line-height: 3rem;
   }
   p {
     font-size: 1.3rem;
