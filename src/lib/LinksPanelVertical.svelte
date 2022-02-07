@@ -116,6 +116,8 @@
       height: 36px;
       border-radius: 5px;
       transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+      opacity: 0;
+      animation: fadein 1s forwards;
     }
     &:hover div {
       background: var(--primary);
@@ -156,24 +158,48 @@
       opacity: 1;
     }
     &#link-gh div,
+    &#link-gh div::before,
     &#link-gh div::after {
+      animation-delay: 0.3s;
       clip-path: url(#clip-gh);
     }
     &#link-li div,
+    &#link-li div::before,
     &#link-li div::after {
+      animation-delay: 0.4s;
       clip-path: url(#clip-li);
     }
     &#link-bd div,
+    &#link-bd div::before,
     &#link-bd div::after {
+      animation-delay: 0.5s;
       clip-path: url(#clip-bd);
     }
     &#link-ig div,
+    &#link-ig div::before,
     &#link-ig div::after {
+      animation-delay: 0.6s;
       clip-path: url(#clip-ig);
     }
     svg {
       width: 0;
       height: 0;
+    }
+  }
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
     }
   }
 </style>
