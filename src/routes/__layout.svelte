@@ -41,7 +41,7 @@
 
 <header>
   <nav>
-    <div id="logo">logo</div>
+    <div id="logo" />
     <div id="desktop_nav">
       <DesktopNav {active_section} />
     </div>
@@ -84,7 +84,8 @@
       z-index: 3;
       width: 40px;
       height: 40px;
-      background: var(--primary);
+      background: url("./logo.png");
+      background-size: cover;
     }
     nav {
       height: 100%;
