@@ -9,9 +9,11 @@ export default () => {
         document.getElementsByTagName('header')[0].style.top = '-120px';
       }
       if (currentScrollPos !== 0) {
-        document.getElementsByTagName('header')[0].classList.add('hasshadow');
+        document.getElementById('scroll-tip').classList.toggle('scrolled', true);
+        document.getElementsByTagName('header')[0].classList.toggle('hasshadow', true);
       } else {
-        document.getElementsByTagName('header')[0].classList.remove('hasshadow');
+        document.getElementById('scroll-tip').classList.toggle('scrolled', false);
+        document.getElementsByTagName('header')[0].classList.toggle('hasshadow', false);
       }
       prevScrollpos = currentScrollPos;
     };

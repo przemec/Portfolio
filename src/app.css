@@ -57,6 +57,29 @@ header.hasshadow {
 }
 
 #svelte {
+  width: 100%;
   min-height: 100vh;
   display: flex;
+}
+
+#scroll-tip.scrolled {
+  animation: fadeout 1s forwards !important;
+}
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
+@-webkit-keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    display: none;
+  }
 }

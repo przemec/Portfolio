@@ -2,7 +2,7 @@
   import { onMount } from 'svelte';
   import { page } from '$app/stores';
   import smoothscroll from 'smoothscroll-polyfill';
-  import HideHeader from '$helpers/HideHeader';
+  import OnWindowScroll from '$helpers/OnWindowScroll';
   import MobileNav from '$lib/MobileNav/index.svelte';
   import LinksPanelHorizontal from '$lib/LinksPanelHorizontal.svelte';
   import DesktopNav from '$lib/DesktopNav/index.svelte';
@@ -29,7 +29,7 @@
       if (section_element) observer.observe(section_element);
     });
 
-    HideHeader();
+    OnWindowScroll();
     smoothscroll.polyfill();
     $page.url.hash && document.querySelector($page.url.hash).scrollIntoView({ behavior: 'smooth' });
   });
@@ -118,6 +118,7 @@
     }
   }
   #content {
+    width: 100%;
     min-height: 100vh;
     min-height: calc(100vh - 100px);
     display: flex;
