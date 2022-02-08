@@ -45,7 +45,7 @@
       &:nth-child(2) {
         top: -82%;
         left: -7px;
-        background: #eee;
+        background: var(--text-color);
       }
       &:nth-child(3) {
         top: -87%;

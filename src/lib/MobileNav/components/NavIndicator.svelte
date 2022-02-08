@@ -30,7 +30,7 @@
     left: 0;
     width: 100%;
     transform: translateY(-50%);
-    
+
     div {
       position: absolute;
       transform: translateX(0);
@@ -45,7 +45,7 @@
     }
     div:nth-child(2) {
       right: -30%;
-      background: #eee;
+      background: var(--text-color);
       top: -5px;
     }
     div:nth-child(3) {
