@@ -84,7 +84,7 @@
       z-index: 3;
       width: 40px;
       height: 40px;
-      background: url("./logo.png");
+      background: url("/logo.png");
       background-size: cover;
     }
     nav {
