@@ -54,7 +54,7 @@
     width: 2.5rem;
     height: 4rem;
     transform: translateX(-50%);
-    border: 0.1rem solid rgba(255, 255, 255, 0.6);
+    border: 0.15rem solid rgba(255, 255, 255, 0.3);
     border-radius: 3rem;
     opacity: 0;
     animation: fadein 2s forwards;
