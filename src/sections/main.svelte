@@ -9,6 +9,7 @@
 
 <style lang="scss">
   section {
+    position: relative;
     min-height: 100vh;
     width: 100%;
     padding: 90px 20px 200px;
