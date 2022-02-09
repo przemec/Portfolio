@@ -25,13 +25,13 @@
     }
   }
   h2 {
-    height: 4rem;
     font-size: 3rem;
+    font-size: clamp(45px, 12vw, 70px);
     text-align: center;
   }
   h1 {
-    height: 5rem;
     font-size: 3.5rem;
+    font-size: clamp(50px, 15vw, 75px);
     text-align: center;
 
     strong {
@@ -42,9 +42,9 @@
     }
   }
   h3 {
-    margin-top: 0.4rem;
-    height: 3rem;
+    margin-top: 0.6rem;
     font-size: 2rem;
+    font-size: clamp(30px, 9vw, 50px);
     text-align: center;
   }
   #scroll-tip {
