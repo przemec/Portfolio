@@ -59,15 +59,15 @@
     }
     a {
       display: flex;
-      height: 3em;
+      height: 5.4rem;
       text-align: center;
       align-items: center;
       color: var(--text-color);
       font-weight: 700;
-      font-size: 1.2em;
-      line-height: 3em;
+      font-size: 2rem;
+      line-height: 5.4rem;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.2rem;
       text-decoration: none;
       transition: color 0.2s linear;
     }

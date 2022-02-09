@@ -22,23 +22,23 @@
     align-items: flex-start;
   }
   h1 {
-    font-size: 5rem;
+    font-size: 8rem;
     color: var(--primary);
-    line-height: 5rem;
+    line-height: 8rem;
   }
   h2 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    line-height: 3rem;
+    font-size: 4.5rem;
+    margin-bottom: 1.6rem;
+    line-height: 4.5rem;
   }
   p {
-    font-size: 1.3rem;
-    line-height: 1.6rem;
-    margin-top: 1rem;
+    font-size: 2rem;
+    line-height: 2.4rem;
+    margin-top: 1.6rem;
   }
   a {
     color: var(--secondary);
-    font-size: 1.5rem;
+    font-size: 2.4rem;
     text-align: center;
     text-decoration: none;
 

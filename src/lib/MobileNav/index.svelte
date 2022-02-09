@@ -101,14 +101,14 @@
     transition: transform 0.2s ease-in-out;
 
     a {
-      height: 3em;
+      height: 5.4rem;
       width: 100%;
       text-align: center;
       color: var(--text-color);
-      font-size: 1.2em;
-      line-height: 3em;
+      font-size: 2.2rem;
+      line-height: 5.4rem;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.2rem;
       text-decoration: none;
       transition: color 0.2s, font-size 0.2s;
     }
@@ -119,7 +119,7 @@
     &.active a {
       color: var(--text-color-selected);
       font-weight: bold;
-      font-size: 1.6em;
+      font-size: 2.6rem;
     }
   }
   footer {

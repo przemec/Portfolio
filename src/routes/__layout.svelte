@@ -165,7 +165,7 @@
 
     p {
       width: 100%;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.2rem;
       text-align: center;
     }
   }
