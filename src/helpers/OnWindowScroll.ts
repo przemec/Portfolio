@@ -3,7 +3,7 @@ export default () => {
     let prevScrollpos = window.pageYOffset;
     const onwindowscroll = () => {
       let currentScrollPos = window.pageYOffset;
-      if (prevScrollpos > currentScrollPos) {
+      if (prevScrollpos >= currentScrollPos) {
         document.getElementsByTagName('header')[0].style.top = '0';
       } else {
         document.getElementsByTagName('header')[0].style.top = '-120px';
