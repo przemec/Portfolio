@@ -22,7 +22,7 @@
 
 <style lang="scss">
   section {
-    min-height: calc(100vh - 100px);
+    min-height: 100vh;
     margin-bottom: 20px;
     color: var(--text-color);
   }

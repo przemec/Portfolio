@@ -10,7 +10,7 @@
   import '../app.css';
 
   let active_section = '';
-  let sections = ['about', 'skills', 'projects', 'contact'];
+  let sections = ['main', 'about', 'skills', 'projects', 'contact'];
   onMount(() => {
     const observer = new IntersectionObserver(
       (entries) => {
