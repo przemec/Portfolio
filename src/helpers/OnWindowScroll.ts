@@ -1,7 +1,7 @@
 export default () => {
   if (window) {
     let prevScrollpos = window.pageYOffset;
-    window.onscroll = function () {
+    const onwindowscroll = () => {
       let currentScrollPos = window.pageYOffset;
       if (prevScrollpos > currentScrollPos) {
         document.getElementsByTagName('header')[0].style.top = '0';
@@ -17,5 +17,7 @@ export default () => {
       }
       prevScrollpos = currentScrollPos;
     };
+    onwindowscroll();
+    window.onscroll = () => onwindowscroll();
   }
 };
