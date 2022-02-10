@@ -20,16 +20,17 @@
         }}
         >Frond End Developer
       </a>
-      located in Cracow, Poland. Building aesthetic, clean-looking, pixel-perfect websites is my passion.
+      located in Cracow, Poland. My passion is building aesthetic, clean-looking, pixel-perfect websites.
+    </p>
+    <p>
+      Apart from programming I'm into reading books, travelling and <a
+        href="https://www.instagram.com/przemek.13/"
+        target="_blank">amateur photography</a
+      >. I've also got interest in blockchain and cryptocurrencies.
     </p>
     <p>
       I'm well-organised person who loves solving problems. My affection towards coding started in
       high school, where I wrote my first lines of JavaScript.
-    </p>
-    <p>
-      Apart from programming I'm into
-      reading books, travelling and <a href="https://www.instagram.com/przemek.13/" target="_blank">amateur photography</a>.
-      I've also got interest in blockchain and cryptocurrencies. 
     </p>
     <p>
       In the future I want to further explore Front End industry, as well as to learn more about
@@ -40,21 +41,22 @@
 
 <style lang="scss">
   section {
-    max-width: 700px;
-    min-height: 100vh;
-    padding-top: 3rem;
-    perspective: 10px;
+    max-width: 800px;
+    padding: 10vh 0 20vh;
   }
   #about-container {
     position: relative;
     width: 100%;
-    padding: 4rem 1rem;
-    border-radius: 4px;
+    padding: 3rem 1rem;
+    border-radius: 1rem;
     background: var(--background-light);
     color: var(--text-color);
-    perspective: 10px;
-    transform-style: preserve-3d;
     overflow: hidden;
+  }
+  @media (min-width: 800px) {
+    #about-container {
+      padding: 4rem 2rem;
+    }
   }
   h1 {
     position: relative;
@@ -76,7 +78,6 @@
     margin-bottom: 1rem;
   }
   .stripes div {
-    // z-index: 0;
     position: absolute;
     top: -30px;
     right: 0;
@@ -89,7 +90,6 @@
 
     &:nth-child(1) {
       left: 40%;
-      transform: rotate(45deg) translateZ(-10px);
     }
     &:nth-child(2) {
       left: 30%;
