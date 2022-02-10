@@ -132,7 +132,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     transition: filter 0.2s linear;
   }
   @media (min-width: 800px) {
