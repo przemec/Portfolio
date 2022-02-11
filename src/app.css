@@ -6,7 +6,7 @@
   --background: #222;
   --background-light: #292929;
   --background-lightest: #333;
-  --text-color: #ddd;
+  --text-color: #ccc;
   --text-color-selected: #fff;
   --scrollbar-thumb: rgba(255, 255, 255, 0.13);
   font-family: 'Baloo Paaji 2', Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
@@ -59,10 +59,13 @@ body.blurred {
 .blurred main {
   filter: blur(5px);
 }
-header.hasshadow {
+header.isscrolled {
   height: 60px !important;
   background: var(--background-lightest) !important;
   box-shadow: 0 5px 15px -4px rgba(0, 0, 0, 0.7);
+}
+header.ishidden {
+  top: -120px !important;
 }
 
 ::selection {
