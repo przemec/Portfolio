@@ -17,10 +17,6 @@
       > located in Cracow, Poland.
     </p>
     <p>
-      Apart from programming I'm into reading books, travelling and amateur photography. I've also
-      got interest in blockchain and cryptocurrencies.
-    </p>
-    <p>
       I'm well-organised person who loves
       <a
         href="#projects"
@@ -30,6 +26,10 @@
         }}>solving problems</a
       >. My affection towards coding started in high school, where I wrote my first lines of
       JavaScript.
+    </p>
+    <p>
+      Apart from programming I'm into reading books, travelling and amateur photography. I've also
+      got interest in blockchain and cryptocurrencies.
     </p>
     <p>
       In
