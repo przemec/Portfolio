@@ -3,16 +3,20 @@
   <h1 id="name">
     I'm <strong>Przemek</strong>,
   </h1>
-  <h3>Front End Developer</h3>
+  <p>
+    <strong>Front End Developer</strong><br />
+    with a passion for building<br />
+    aesthetic, clean looking websites.
+  </p>
   <div id="scroll-tip" />
 </section>
 
 <style lang="scss">
   section {
-    position: relative;
     min-height: 100vh;
     width: 100%;
-    padding: 90px 20px 200px;
+    max-width: 1000px;
+    padding: 9rem 2rem 20rem;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -21,19 +25,23 @@
   }
   @media (min-width: 800px) {
     section {
-      padding: 90px 20px;
-      align-items: center;
+      padding: 9rem 2rem;
     }
   }
   h2 {
-    font-size: 5.4rem;
-    font-size: clamp(45px, 12vw, 70px);
-    text-align: center;
+    font-size: 3.2rem;
+    font-size: clamp(25px, 7vw, 35px);
+    font-weight: 100;
+  }
+  @media (max-width: 800px) {
+    h2 {
+      transform: translateY(0.8rem);
+    }
   }
   h1 {
+    color: var(--text-color-selected);
     font-size: 6.2rem;
     font-size: clamp(50px, 15vw, 75px);
-    text-align: center;
 
     strong {
       font-family: 'Concert One', cursive;
@@ -42,16 +50,22 @@
       letter-spacing: 0.1rem;
     }
   }
-  h3 {
-    margin-top: 1rem;
-    font-size: 3.2rem;
-    font-size: clamp(30px, 9vw, 50px);
-    text-align: center;
+  p {
+    line-height: 1.4;
+    font-size: 3rem;
+    font-size: clamp(25px, 7vw, 35px);
+
+    strong {
+      font-size: 3.2rem;
+      font-size: clamp(30px, 8vw, 40px);
+      font-weight: bold;
+    }
   }
   #scroll-tip {
     position: absolute;
     left: 50%;
-    bottom: 3.2rem;
+    top: 90vh;
+    top: calc(95vh - 6.4rem);
     width: 4rem;
     height: 6.4rem;
     transform: translateX(-50%);
@@ -59,7 +73,7 @@
     border-radius: 5.4rem;
     opacity: 0;
     animation: fadein 2s forwards;
-    animation-delay: 2s;
+    animation-delay: 1s;
 
     &::before {
       content: '';

@@ -4,11 +4,7 @@
 
 <section id="about">
   <div id="about-container">
-    <div class="stripes">
-      <div />
-      <div />
-      <div />
-    </div>
+    <div class="stripes" />
     <h1>About Me</h1>
     <p>
       I'm {age} years old
@@ -17,39 +13,52 @@
         on:click={(e) => {
           e.preventDefault();
           document.querySelector('#skills')?.scrollIntoView({ behavior: 'smooth' });
-        }}
-        >Frond End Developer
-      </a>
-      located in Cracow, Poland. My passion is building aesthetic, clean-looking, pixel-perfect websites.
+        }}>web developer</a
+      > located in Cracow, Poland.
     </p>
     <p>
-      Apart from programming I'm into reading books, travelling and <a
-        href="https://www.instagram.com/przemek.13/"
-        target="_blank">amateur photography</a
-      >. I've also got interest in blockchain and cryptocurrencies.
+      Apart from programming I'm into reading books, travelling and amateur photography. I've also
+      got interest in blockchain and cryptocurrencies.
     </p>
     <p>
-      I'm well-organised person who loves solving problems. My affection towards coding started in
-      high school, where I wrote my first lines of JavaScript.
+      I'm well-organised person who loves
+      <a
+        href="#projects"
+        on:click={(e) => {
+          e.preventDefault();
+          document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
+        }}>solving problems</a
+      >. My affection towards coding started in high school, where I wrote my first lines of
+      JavaScript.
     </p>
     <p>
-      In the future I want to further explore Front End industry, as well as to learn more about
-      Back End technologies, so that I can define myself as a Full Stack Developer.
+      In
+      <a
+        href="#contact"
+        on:click={(e) => {
+          e.preventDefault();
+          document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+        }}>the future</a
+      > I want to further explore Front End industry, as well as to learn more about Back End technologies,
+      so that I can define myself as a Full Stack Developer.
     </p>
   </div>
 </section>
 
 <style lang="scss">
   section {
-    max-width: 800px;
+    max-width: 100rem;
     padding: 10vh 0 20vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
   }
   #about-container {
     position: relative;
     width: 100%;
     padding: 3rem 1rem;
     border-radius: 1rem;
-    background: var(--background-light);
     color: var(--text-color);
     overflow: hidden;
   }
@@ -67,35 +76,34 @@
   p {
     position: relative;
     z-index: 1;
+    max-width: 80rem;
     font-size: 2rem;
 
     a {
       text-decoration: none;
-      color: var(--secondary);
+      color: var(--primary);
     }
   }
   p:not(:last-child) {
     margin-bottom: 1rem;
   }
-  .stripes div {
+  .stripes {
     position: absolute;
-    top: -30px;
-    right: 0;
-    width: 900px;
-    height: 20px;
-    transform: rotate(45deg);
-    transform-origin: left;
-    border-radius: 5px;
-    background: var(--background-lightest);
-
-    &:nth-child(1) {
-      left: 40%;
-    }
-    &:nth-child(2) {
-      left: 30%;
-    }
-    &:nth-child(3) {
-      left: 20%;
-    }
+    top: 50%;
+    left: 50%;
+    width: 90rem;
+    height: 10rem;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: linear-gradient(
+      0deg,
+      var(--background-light) 20%,
+      var(--background) 20%,
+      var(--background) 40%,
+      var(--background-light) 40%,
+      var(--background-light) 60%,
+      var(--background) 60%,
+      var(--background) 80%,
+      var(--background-light) 80%
+    );
   }
 </style>
