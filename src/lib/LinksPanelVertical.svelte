@@ -125,7 +125,6 @@
     }
     &.semihoveredtop div,
     &.semihoveredbottom div {
-      box-shadow: 3px 3px 3px #fff;
       background: var(--text-color);
       transform: translateX(-4px);
     }
