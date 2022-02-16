@@ -2,7 +2,7 @@
   const age = Math.floor(new Date().getFullYear() - 2000.5);
 </script>
 
-<section id="about">
+<section data-scroll-section id="about">
   <div id="about-container">
     <div class="stripes" />
     <h1>About Me</h1>

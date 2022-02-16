@@ -1,12 +1,13 @@
 <script lang="ts">
-  import { page, url } from '$app/stores';
-
+  import { page } from '$app/stores';
+  import { scroll } from '$store';
   import NavIndicator from './components/NavIndicator.svelte';
 
   export let active_section;
+
   let tabs = [
     { ishovered: false, title: 'about' },
-    { ishovered: false, title: 'skills'},
+    { ishovered: false, title: 'skills' },
     { ishovered: false, title: 'projects' },
     { ishovered: false, title: 'contact' }
   ];
@@ -25,8 +26,8 @@
       <a
         href={`/#${tab.title}`}
         on:click={(e) => {
-          $page.url.pathname === "/" && e.preventDefault();
-          document.querySelector(`#${tab.title}`)?.scrollIntoView({ behavior: 'smooth' });
+          $page.url.pathname === '/' && e.preventDefault();
+          $scroll.scrollTo(document.querySelector(`#${tab.title}`));
           window.history.replaceState(null, '', `#${tab.title}`);
         }}
       >

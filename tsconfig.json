@@ -30,7 +30,9 @@
       "$routes": ["src/routes"],
       "$routes/*": ["src/routes/*"],
       "$helpers": ["src/helpers"],
-      "$helpers/*": ["src/helpers/*"]
+      "$helpers/*": ["src/helpers/*"],
+      "$store": ["src/store"],
+      "$store/*": ["src/store/*"]
     }
   },
   "include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.ts", "src/**/*.svelte"]

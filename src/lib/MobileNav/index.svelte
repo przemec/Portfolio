@@ -1,13 +1,14 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import { fly, fade } from 'svelte/transition';
+  import { scroll } from '$store';
   import BurgerButton from './components/BurgerButton.svelte';
   import NavIndicator from './components/NavIndicator.svelte';
   import LinksPanel from '../LinksPanelHorizontal.svelte';
 
   export let active_section;
-  let tabs = ['about', 'skills', 'projects', 'contact'];
 
+  let tabs = ['about', 'skills', 'projects', 'contact'];
   let ishidden = true;
   let set_hidden = (v) => {
     document.body.classList.toggle('blurred');
@@ -33,7 +34,7 @@
               on:click={(e) => {
                 set_hidden(true);
                 $page.url.pathname === '/' && e.preventDefault();
-                document.querySelector(`#${tab}`)?.scrollIntoView({ behavior: 'smooth' });
+                $scroll.scrollTo(document.querySelector(`#${tab}`));
                 window.history.replaceState(null, '', `#${tab}`);
               }}
             >

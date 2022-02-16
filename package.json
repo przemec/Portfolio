@@ -36,6 +36,6 @@
     "@lukeed/uuid": "^2.0.0",
     "cookie": "^0.4.1",
     "gsap": "^3.9.1",
-    "smoothscroll-polyfill": "^0.4.4"
+    "locomotive-scroll": "^4.1.4"
   }
 }

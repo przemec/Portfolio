@@ -1,17 +1,26 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { page } from '$app/stores';
-  import smoothscroll from 'smoothscroll-polyfill';
-  import OnWindowScroll from '$helpers/OnWindowScroll';
+  import { scroll } from '$store';
   import MobileNav from '$lib/MobileNav/index.svelte';
   import LinksPanelHorizontal from '$lib/LinksPanelHorizontal.svelte';
   import DesktopNav from '$lib/DesktopNav/index.svelte';
   import LinksPanelVertical from '$lib/LinksPanelVertical.svelte';
   import '../app.css';
+  import '../locomotive-scroll.css';
 
   let active_section = '';
   let sections = ['main', 'about', 'skills', 'projects', 'contact'];
-  onMount(() => {
+  let LocomotiveScroll;
+  onMount(async () => {
+    LocomotiveScroll = (await import('locomotive-scroll')).default;
+    scroll.set(
+      new LocomotiveScroll({
+        el: document.querySelector('[data-scroll-container]'),
+        smooth: true,
+        getDirection: true
+      })
+    );
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -29,8 +38,26 @@
       if (section_element) observer.observe(section_element);
     });
 
-    OnWindowScroll();
-    smoothscroll.polyfill();
+    const onwindowscroll = (scrollY, direction) => {
+      if (direction === 'down') {
+        document.getElementsByTagName('header')[0].classList.toggle('ishidden', true);
+      } else {
+        document.getElementsByTagName('header')[0].classList.toggle('ishidden', false);
+      }
+      if (Math.floor(scrollY - 5) > 0) {
+        document.getElementById('scroll-tip').classList.toggle('scrolled', true);
+        document.getElementsByTagName('header')[0].classList.toggle('isscrolled', true);
+      } else {
+        document.getElementById('scroll-tip').classList.toggle('scrolled', false);
+        document.getElementsByTagName('header')[0].classList.toggle('isscrolled', false);
+      }
+    };
+
+    onwindowscroll(0, 'up');
+    $scroll.on('scroll', (args) => {
+      onwindowscroll(args.scroll.y, args.direction);
+    });
+
     $page.url.hash && document.querySelector($page.url.hash).scrollIntoView({ behavior: 'smooth' });
   });
 </script>
@@ -53,7 +80,7 @@
 </header>
 
 <div id="content">
-  <main>
+  <main data-scroll-container>
     <slot />
   </main>
   <div id="vertical_links">
@@ -84,7 +111,7 @@
       z-index: 3;
       width: 40px;
       height: 40px;
-      background: url("/logo.png");
+      background: url('/logo.png');
       background-size: cover;
     }
     nav {

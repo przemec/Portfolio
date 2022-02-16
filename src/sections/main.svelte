@@ -1,4 +1,4 @@
-<section id="main">
+<section data-scroll-section id="main">
   <h2>Hello,</h2>
   <h1 id="name">
     I'm <strong>Przemek</strong>,

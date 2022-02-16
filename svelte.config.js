@@ -21,7 +21,8 @@ const config = {
         alias: {
           $sections: path.resolve('./src/sections'),
           $routes: path.resolve('./src/routes'),
-          $helpers: path.resolve('./src/helpers')
+          $helpers: path.resolve('./src/helpers'),
+          $store: path.resolve('./src/store')
         }
       }
     },
