@@ -2,9 +2,17 @@
   const age = Math.floor(new Date().getFullYear() - 2000.5);
 </script>
 
-<section data-scroll-section id="about">
+<section id="about">
   <div id="about-container">
-    <div class="stripes" />
+    <div class="stripesWrap">
+      <div
+        class="stripes"
+        data-scroll
+        data-scroll-speed="1.5"
+        data-scroll-id="stripes"
+        data-scroll-target="#about-container"
+      />
+    </div>
     <h1>About Me</h1>
     <p>
       I'm {age} years old
@@ -58,7 +66,6 @@
     position: relative;
     width: 100%;
     padding: 3rem 1rem;
-    border-radius: 1rem;
     color: var(--text-color);
     overflow: hidden;
   }
@@ -87,23 +94,26 @@
   p:not(:last-child) {
     margin-bottom: 1rem;
   }
-  .stripes {
+  .stripesWrap {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 90rem;
-    height: 10rem;
     transform: translate(-50%, -50%) rotate(45deg);
-    background: linear-gradient(
-      0deg,
-      var(--background-light) 20%,
-      var(--background) 20%,
-      var(--background) 40%,
-      var(--background-light) 40%,
-      var(--background-light) 60%,
-      var(--background) 60%,
-      var(--background) 80%,
-      var(--background-light) 80%
-    );
+
+    .stripes {
+      width: 100rem;
+      height: 10rem;
+      background: linear-gradient(
+        0deg,
+        var(--background-light) 20%,
+        var(--background) 20%,
+        var(--background) 40%,
+        var(--background-light) 40%,
+        var(--background-light) 60%,
+        var(--background) 60%,
+        var(--background) 80%,
+        var(--background-light) 80%
+      );
+    }
   }
 </style>
