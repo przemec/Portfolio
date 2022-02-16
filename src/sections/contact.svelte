@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<section data-scroll-section id="contact">
+<section id="contact">
   <h1>Contact</h1>
   <p>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore consequatur tempore temporibus

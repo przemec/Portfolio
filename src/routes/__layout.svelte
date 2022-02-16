@@ -11,9 +11,9 @@
 
   let active_section = '';
   let sections = ['main', 'about', 'skills', 'projects', 'contact'];
-  let LocomotiveScroll;
+
   onMount(async () => {
-    LocomotiveScroll = (await import('locomotive-scroll')).default;
+    let LocomotiveScroll = (await import('locomotive-scroll')).default;
     scroll.set(
       new LocomotiveScroll({
         el: document.querySelector('[data-scroll-container]'),
@@ -79,15 +79,14 @@
   </nav>
 </header>
 
-<div id="content">
-  <main data-scroll-container>
+<div data-scroll-container id="content">
+  <main data-scroll-section>
     <slot />
   </main>
   <div id="vertical_links">
     <LinksPanelVertical />
   </div>
-
-  <footer>
+  <footer data-scroll-section>
     <div id="footer_links">
       <LinksPanelHorizontal />
     </div>

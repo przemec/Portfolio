@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<section data-scroll-section id="projects">
+<section id="projects">
   <h1>Projects</h1>
   <p>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore consequatur tempore temporibus
