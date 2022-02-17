@@ -2,7 +2,7 @@
 
 :root {
   --primary: #eb4034;
-  --secondary: #a95fb1;
+  --secondary: #69508f;
   --background: #222;
   --background-light: #292929;
   --background-lightest: #333;
@@ -71,7 +71,7 @@ header.ishidden {
   background-color: var(--primary);
   color: var(--text-color-selected);
 }
-a::selection  {
+a::selection {
   color: var(--background);
 }
 
