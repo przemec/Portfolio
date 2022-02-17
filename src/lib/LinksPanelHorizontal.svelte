@@ -52,22 +52,24 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 4rem;
+    height: 4rem;
     color: var(--text-color);
     transition: color 0.2s, transform 0.2s;
     margin: 0 2%;
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       color: var(--text-color-selected);
     }
-    &:hover svg {
-      transform: translateY(-6px);
+    &:hover svg,
+    &:focus-visible svg {
+      transform: translateY(-0.6rem);
     }
   }
   svg {
-    width: 36px;
-    height: 36px;
+    width: 3.6rem;
+    height: 3.6rem;
     transition: color 0.2s, transform 0.2s;
   }
 </style>

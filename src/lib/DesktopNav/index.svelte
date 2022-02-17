@@ -11,6 +11,9 @@
     { ishovered: false, title: 'projects' },
     { ishovered: false, title: 'contact' }
   ];
+  $: if (tabs.filter((e) => e.ishovered === true).length !== 0) {
+    document.getElementsByTagName('header')[0].classList.toggle('ishidden', false);
+  }
 </script>
 
 <nav>
@@ -20,6 +23,8 @@
       class:active={active_section === tab.title}
       on:mouseenter={() => (tab.ishovered = true)}
       on:mouseleave={() => (tab.ishovered = false)}
+      on:focusin={() => (tab.ishovered = true)}
+      on:focusout={() => (tab.ishovered = false)}
       on:click={() => (tab.ishovered = false)}
     >
       {#if active_section === tab.title || tab.ishovered}<NavIndicator />{/if}
@@ -47,7 +52,7 @@
     align-items: top;
   }
   .tab {
-    margin: 0 10px;
+    margin: 0 1rem;
     height: 100%;
     position: relative;
     display: flex;
@@ -56,7 +61,7 @@
     transition: transform 0.2s ease-in-out;
 
     &.active {
-      transform: translateY(6px);
+      transform: translateY(0.6rem);
     }
     a {
       display: flex;
@@ -74,6 +79,10 @@
     }
     a:hover {
       color: var(--text-color-selected);
+    }
+    a:focus-visible {
+      color: var(--text-color-selected);
+      font-weight: bold;
     }
   }
 </style>

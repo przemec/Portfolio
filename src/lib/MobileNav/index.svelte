@@ -76,7 +76,7 @@
     top: 0;
     right: 0;
     width: 80vw;
-    max-width: 400px;
+    max-width: 40rem;
     height: 100vh;
     overflow: hidden;
     display: flex;
@@ -113,7 +113,8 @@
       text-decoration: none;
       transition: color 0.2s, font-size 0.2s;
     }
-    a:hover {
+    a:hover,
+    a:focus-visible {
       font-weight: bold;
       color: var(--text-color-selected);
     }
@@ -127,7 +128,7 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 50px;
-    padding-bottom: 10px;
+    height: 5rem;
+    padding-bottom: 1rem;
   }
 </style>

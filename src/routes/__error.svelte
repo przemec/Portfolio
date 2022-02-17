@@ -14,7 +14,7 @@
     color: var(--text-color);
     min-height: 30vh;
     width: 100%;
-    padding: 110px 30px 30px;
+    padding: 11rem 3rem 3rem;
     display: flex;
     flex: 1;
     flex-direction: column;

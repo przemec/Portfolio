@@ -24,6 +24,10 @@
   box-sizing: border-box;
 }
 
+:focus-visible {
+  outline: none;
+}
+
 h1,
 h2,
 h3 {
@@ -41,12 +45,12 @@ body {
   overflow-x: hidden;
 }
 body::-webkit-scrollbar {
-  width: 12px;
+  width: 1.2rem;
 }
 body::-webkit-scrollbar-thumb {
   background-color: var(--scrollbar-thumb);
-  border: 2px solid var(--background-light);
-  border-radius: 6px;
+  border: 0.2rem solid var(--background-light);
+  border-radius: 0.6rem;
 }
 body::-webkit-scrollbar-track {
   background: var(--background-light);
@@ -59,12 +63,12 @@ body.blurred {
   filter: blur(5px);
 }
 header.isscrolled {
-  height: 60px !important;
+  height: 6rem !important;
   background: var(--background-lightest) !important;
   box-shadow: 0 5px 15px -4px rgba(0, 0, 0, 0.7);
 }
 header.ishidden {
-  top: -120px !important;
+  top: -12rem !important;
 }
 
 ::selection {

@@ -1,6 +1,5 @@
 <script>
   import { quintInOut } from 'svelte/easing';
-  import { fade } from 'svelte/transition';
   let stripes_delays = [0, 30, 60];
 
   function customfly(node, { duration, delay = 0 }) {
@@ -34,22 +33,22 @@
     div {
       position: absolute;
       transform: translateY(0);
-      width: 10px;
+      width: 1rem;
       height: 100%;
-      border-radius: 5px;
+      border-radius: 0.5rem;
       &:nth-child(1) {
         top: -92%;
-        left: -18px;
+        left: -1.8rem;
         background: var(--primary);
       }
       &:nth-child(2) {
         top: -82%;
-        left: -7px;
+        left: -0.6rem;
         background: var(--text-color);
       }
       &:nth-child(3) {
         top: -87%;
-        left: 4px;
+        left: 0.6rem;
         background: var(--secondary);
       }
     }

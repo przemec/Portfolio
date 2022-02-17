@@ -23,7 +23,7 @@
 <style lang="scss">
   section {
     min-height: 100vh;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
     color: var(--text-color);
   }
   h1 {

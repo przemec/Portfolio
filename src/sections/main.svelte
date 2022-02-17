@@ -15,13 +15,14 @@
   section {
     min-height: 100vh;
     width: 100%;
-    max-width: 1000px;
+    max-width: 100rem;
     padding: 9rem 2rem 20rem;
     display: flex;
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
     color: var(--text-color);
+    user-select: none;
   }
   @media (min-width: 800px) {
     section {
@@ -30,7 +31,7 @@
   }
   h2 {
     font-size: 3.2rem;
-    font-size: clamp(25px, 7vw, 35px);
+    font-size: clamp(2.5rem, 7vw, 3.5rem);
     font-weight: 100;
   }
   @media (max-width: 800px) {
@@ -41,7 +42,7 @@
   h1 {
     color: var(--text-color-selected);
     font-size: 6.2rem;
-    font-size: clamp(50px, 15vw, 75px);
+    font-size: clamp(5rem, 15vw, 7.5rem);
 
     strong {
       font-family: 'Concert One', cursive;
@@ -53,11 +54,11 @@
   p {
     line-height: 1.4;
     font-size: 3rem;
-    font-size: clamp(25px, 7vw, 35px);
+    font-size: clamp(2.5rem, 7vw, 3.5rem);
 
     strong {
       font-size: 3.2rem;
-      font-size: clamp(30px, 8vw, 40px);
+      font-size: clamp(3rem, 8vw, 4rem);
       font-weight: bold;
     }
   }

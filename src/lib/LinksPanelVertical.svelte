@@ -15,6 +15,8 @@
     target="_blank"
     on:mouseenter={() => set_active(0)}
     on:mouseleave={() => set_inactive(0)}
+    on:focusin={() => set_active(0)}
+    on:focusout={() => set_inactive(0)}
     class:semihoveredbottom={active_tabs[1]}
   >
     <div />
@@ -35,6 +37,8 @@
     target="_blank"
     on:mouseenter={() => set_active(1)}
     on:mouseleave={() => set_inactive(1)}
+    on:focusin={() => set_active(1)}
+    on:focusout={() => set_inactive(1)}
     class:semihoveredtop={active_tabs[0]}
     class:semihoveredbottom={active_tabs[2]}
   >
@@ -56,6 +60,8 @@
     target="_blank"
     on:mouseenter={() => set_active(2)}
     on:mouseleave={() => set_inactive(2)}
+    on:focusin={() => set_active(2)}
+    on:focusout={() => set_inactive(2)}
     class:semihoveredtop={active_tabs[1]}
     class:semihoveredbottom={active_tabs[3]}
   >
@@ -76,6 +82,8 @@
     target="_blank"
     on:mouseenter={() => set_active(3)}
     on:mouseleave={() => set_inactive(3)}
+    on:focusin={() => set_active(3)}
+    on:focusout={() => set_inactive(3)}
     class:semihoveredtop={active_tabs[2]}
   >
     <div />
@@ -104,7 +112,7 @@
   }
   a {
     width: 100%;
-    height: 80px;
+    height: 8rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -112,21 +120,22 @@
     div {
       position: relative;
       background: var(--text-color);
-      width: 36px;
-      height: 36px;
-      border-radius: 5px;
+      width: 3.6rem;
+      height: 3.6rem;
+      border-radius: 0.5rem;
       transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
       opacity: 0;
       animation: fadein 1s forwards;
     }
-    &:hover div {
+    &:hover div,
+    &:focus-visible div {
       background: var(--primary);
-      transform: translateX(-14px);
+      transform: translateX(-1.4rem);
     }
     &.semihoveredtop div,
     &.semihoveredbottom div {
       background: var(--text-color);
-      transform: translateX(-4px);
+      transform: translateX(-0.4rem);
     }
     div::before {
       content: '';
@@ -135,7 +144,7 @@
       left: 0;
       height: 100%;
       width: 100%;
-      border-radius: 5px;
+      border-radius: 0.5rem;
       opacity: 0;
       transition: opacity 0.3s ease-in-out;
       background: linear-gradient(20deg, var(--primary) 0%, var(--text-color) 60%);
@@ -147,7 +156,7 @@
       left: 0;
       height: 100%;
       width: 100%;
-      border-radius: 5px;
+      border-radius: 0.5rem;
       opacity: 0;
       transition: opacity 0.3s ease-in-out;
       background: linear-gradient(-20deg, var(--text-color) 40%, var(--primary));

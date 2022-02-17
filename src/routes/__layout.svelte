@@ -80,12 +80,12 @@
 </header>
 
 <div data-scroll-container id="content">
-  <main data-scroll-section>
-    <slot />
-  </main>
   <div id="vertical_links">
     <LinksPanelVertical />
   </div>
+  <main data-scroll-section>
+    <slot />
+  </main>
   <footer data-scroll-section>
     <div id="footer_links">
       <LinksPanelHorizontal />
@@ -100,16 +100,16 @@
     position: fixed;
     top: 0;
     left: 0;
-    height: 90px;
+    height: 9rem;
     width: 100%;
-    padding: 0 20px;
+    padding: 0 2rem;
     background: var(--background);
     transition: background 0.3s ease-in-out, top 0.3s, padding 0.3s, box-shadow 0.3s, height 0.3s;
 
     #logo {
       z-index: 3;
-      width: 40px;
-      height: 40px;
+      width: 4rem;
+      height: 4rem;
       background: url('/logo.png');
       background-size: cover;
     }
@@ -124,7 +124,7 @@
   }
   @media (min-width: 800px) {
     header {
-      padding: 0 40px;
+      padding: 0 4rem;
     }
   }
   #desktop_nav,
@@ -140,14 +140,14 @@
     }
     #filler {
       display: initial;
-      width: 40px;
+      width: 4rem;
     }
   }
   #content {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    min-height: calc(100vh - 100px);
+    min-height: calc(100vh - 10rem);
     display: flex;
     flex-direction: column;
   }
@@ -163,16 +163,17 @@
   }
   @media (min-width: 800px) {
     main {
-      padding: 0 140px;
+      padding: 0 14rem;
     }
   }
   #vertical_links {
+    z-index: 2;
     display: none;
     position: fixed;
     top: 50%;
-    right: 0px;
-    height: 260px;
-    width: 120px;
+    right: 0;
+    height: 26rem;
+    width: 12rem;
     transform: translateY(-50%);
   }
   @media (min-width: 800px) {
@@ -187,7 +188,7 @@
     align-items: center;
     color: var(--text-color);
     width: 100%;
-    height: 140px;
+    height: 14rem;
 
     p {
       width: 100%;
@@ -197,12 +198,12 @@
   }
   @media (min-width: 800px) {
     footer {
-      height: 80px;
+      height: 8rem;
     }
   }
   #footer_links {
     width: 100%;
-    height: 50px;
+    height: 5rem;
   }
   @media (min-width: 800px) {
     #footer_links {

@@ -77,7 +77,7 @@
   h1 {
     position: relative;
     z-index: 1;
-    font-size: clamp(30px, 10vw, 45px);
+    font-size: clamp(3rem, 10vw, 4.5rem);
     margin-bottom: 1rem;
   }
   p {
@@ -87,8 +87,28 @@
     font-size: 2rem;
 
     a {
+      position: relative;
       text-decoration: none;
       color: var(--primary);
+    }
+    a::after {
+      content: '';
+      position: absolute;
+      bottom: 1px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 0.2rem;
+      background: currentColor;
+      will-change: transform;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.2s ease-in-out;
+    }
+    a:hover::after,
+    a:focus-visible::after {
+      transform: scaleX(1);
+      transform-origin: left;
     }
   }
   p:not(:last-child) {

@@ -35,23 +35,23 @@
       position: absolute;
       transform: translateX(0);
       width: 55%;
-      height: 10px;
-      border-radius: 5px;
+      height: 1rem;
+      border-radius: 0.5rem;
     }
     div:nth-child(1) {
       right: -37%;
       background: var(--primary);
-      top: -16px;
+      top: -1.6rem;
     }
     div:nth-child(2) {
       right: -30%;
       background: var(--text-color);
-      top: -5px;
+      top: -0.4rem;
     }
     div:nth-child(3) {
       right: -35%;
       background: var(--secondary);
-      top: 6px;
+      top: 0.8rem;
     }
   }
 </style>

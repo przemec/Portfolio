@@ -12,8 +12,8 @@
       css: (t) => {
         const eased = quintInOut(t);
         return `
-          width: ${(1 - eased) * 40 + initial_width}px;
-          transform: translateY(${translate_dir === 'up' ? '-' : ''}${(1 - eased) * 14}px) rotate(${
+          width: ${(1 - eased) * 4 + (initial_width/10)}rem;
+          transform: translateY(${translate_dir === 'up' ? '-' : ''}${(1 - eased) * 1.4}rem) rotate(${
           rotate_dir === 'right' ? '-' : ''
         }${(1 - eased) * 45}deg);
         `;
@@ -27,8 +27,8 @@
       css: (t) => {
         const eased = quintInOut(t);
         return `
-          width: ${eased * 10 + width}px;
-          transform: translateY(${translate_dir === 'up' ? '-' : ''}${(1 - eased) * 14}px) rotate(${
+          width: ${eased + width}rem;
+          transform: translateY(${translate_dir === 'up' ? '-' : ''}${(1 - eased) * 1.4}rem) rotate(${
           rotate_dir === 'right' ? '-' : ''
         }${eased * 45}deg);
         `;
@@ -39,76 +39,81 @@
     const initial_width = node.offsetWidth;
     const { y: initial_y } = node.getBoundingClientRect();
     const { innerHeight: window_height, innerWidth: window_width } = window;
-    const translateY = Math.round(window_height / 2) - initial_y;
+    const translateY = (Math.round(window_height / 2) - initial_y)/10;
     return {
       duration,
       delay,
       css: (t) => {
         const eased = quintInOut(t);
         return `
-          width: ${(1 - eased) * Math.round(window_width * 0.8 - 75) + initial_width}px;
-          transform: translateY(${(1 - eased) * translateY}px);
+          width: ${(1 - eased) * (Math.round(window_width * 0.8 - 75)/10) + (initial_width/10)}rem;
+          transform: translateY(${(1 - eased) * translateY}rem);
         `;
       }
     };
   }
 </script>
 
-<div role="button" on:click={() => set_hidden(!ishidden)}>
+<button on:click={() => set_hidden(!ishidden)}>
   {#if ishidden}
     <span class="hamburger" out:to_exit={{ translate_dir: 'down', rotate_dir: 'right' }} />
     <span class="hamburger" in:fade={{ delay: 200 }} out:fade={{ duration: 100 }} />
     <span class="hamburger" out:to_exit={{ translate_dir: 'up', rotate_dir: 'left' }} />
   {:else}
-    <span class="exit" out:to_burger={{ translate_dir: 'up', rotate_dir: 'right', width: 40 }} />
+    <span class="exit" out:to_burger={{ translate_dir: 'up', rotate_dir: 'right', width: 4 }} />
     <span class="exit" />
-    <span class="exit" out:to_burger={{ translate_dir: 'down', rotate_dir: 'left', width: 30 }} />
+    <span class="exit" out:to_burger={{ translate_dir: 'down', rotate_dir: 'left', width: 3 }} />
   {/if}
-</div>
+</button>
 
 <style lang="scss">
-  [role='button'] {
+  button {
     z-index: 4;
     position: relative;
-    width: 40px;
-    height: 40px;
+    width: 4rem;
+    height: 4rem;
     cursor: pointer;
     overflow: visible;
+    background: transparent;
+    border: none;
 
     span {
       z-index: 4;
       position: absolute;
-      right: 0px;
-      height: 3px;
-      max-width: 40px;
+      right: 0;
+      height: 0.3rem;
+      max-width: 4rem;
       background: var(--text-color);
       will-change: transform, opacity, width;
     }
     .hamburger:nth-child(1) {
-      top: 5px;
-      width: 40px;
+      top: 0.5rem;
+      width: 4rem;
     }
     .hamburger:nth-child(2) {
-      top: 19px;
-      width: 35px;
+      top: 1.9rem;
+      width: 3.5rem;
       max-width: 80vw;
     }
     .hamburger:nth-child(3) {
-      top: 33px;
-      width: 30px;
+      top: 3.3rem;
+      width: 3rem;
     }
     .exit:nth-child(1) {
-      top: 19px;
-      width: 40px;
+      top: 1.9rem;
+      width: 4rem;
       transform: rotate(-45deg);
     }
     .exit:nth-child(2) {
       background: transparent;
     }
     .exit:nth-child(3) {
-      top: 19px;
-      width: 40px;
+      top: 1.9rem;
+      width: 4rem;
       transform: rotate(45deg);
+    }
+    &:focus-visible span {
+      background-color: var(--primary);
     }
   }
 </style>
