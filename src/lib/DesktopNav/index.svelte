@@ -50,6 +50,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: top;
+    user-select: none;
   }
   .tab {
     margin: 0 1rem;

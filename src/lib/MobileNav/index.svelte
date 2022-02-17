@@ -84,6 +84,7 @@
     align-items: center;
     background: var(--background-lightest);
     box-shadow: -5px 0px 20px -10px rgba(0, 0, 0, 0.7);
+    user-select: none;
   }
   nav {
     position: relative;
