@@ -18,7 +18,17 @@
       new LocomotiveScroll({
         el: document.querySelector('[data-scroll-container]'),
         smooth: true,
-        getDirection: true
+        getDirection: true,
+        mobile: {
+          breakpoint: 0,
+          smooth: false,
+          getDirection: true
+        },
+        tablet: {
+          breakpoint: 0,
+          smooth: false,
+          getDirection: true
+        }
       })
     );
     const observer = new IntersectionObserver(
