@@ -5,8 +5,8 @@
   </h1>
   <p>
     <strong>Front End Developer</strong><br />
-    with a passion for building<br />
-    aesthetic, clean looking websites.
+    with a passion for building aesthetic,
+    clean looking websites.
   </p>
   <div id="scroll-tip" />
 </section>
@@ -18,7 +18,7 @@
     max-width: 100rem;
     padding: 9rem 2rem 20rem;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     flex-direction: column;
     color: var(--text-color);
@@ -52,9 +52,11 @@
     }
   }
   p {
+    max-width: 55rem;
     line-height: 1.4;
     font-size: 3rem;
     font-size: clamp(2.5rem, 7vw, 3.5rem);
+    text-align: center;
 
     strong {
       font-size: 3.2rem;

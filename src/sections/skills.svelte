@@ -267,7 +267,7 @@
       }
       ul {
         list-style-type: none;
-        padding: 0;
+        padding: 0 2rem;
         display: flex;
         align-items: center;
         justify-content: space-around;

@@ -57,16 +57,16 @@
 <style lang="scss">
   section {
     max-width: 100rem;
-    padding: 10vh 0 20vh;
+    padding: 10vh 0;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     flex-direction: column;
   }
   #about-container {
     position: relative;
     width: 100%;
-    padding: 3rem 1rem;
+    padding: 3rem 0.2rem;
     color: var(--text-color);
     overflow: hidden;
   }
@@ -80,12 +80,14 @@
     z-index: 1;
     font-size: clamp(3rem, 10vw, 4.5rem);
     margin-bottom: 1rem;
+    text-align: center;
   }
   p {
     position: relative;
     z-index: 1;
     max-width: 80rem;
     font-size: 2rem;
+    text-align: center;
 
     a {
       position: relative;
