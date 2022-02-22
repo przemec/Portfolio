@@ -8,6 +8,7 @@
   import LinksPanelVertical from '$lib/LinksPanelVertical.svelte';
   import '../app.css';
   import '../locomotive-scroll.css';
+import HeaderLogo from '$lib/HeaderLogo.svelte';
 
   let active_section = '';
   let sections = ['main', 'about', 'skills', 'projects', 'contact'];
@@ -68,7 +69,7 @@
       onwindowscroll(args.scroll.y, args.direction);
     });
 
-    $page.url.hash && document.querySelector($page.url.hash).scrollIntoView({ behavior: 'smooth' });
+    $page.url.hash && $scroll.scrollTo(document.querySelector($page.url.hash));
   });
 </script>
 
@@ -78,7 +79,7 @@
 
 <header>
   <nav>
-    <div id="logo" />
+    <HeaderLogo />
     <div id="desktop_nav">
       <DesktopNav {active_section} />
     </div>
@@ -116,13 +117,6 @@
     background: var(--background);
     transition: background 0.3s ease-in-out, top 0.3s, padding 0.3s, box-shadow 0.3s, height 0.3s;
 
-    #logo {
-      z-index: 3;
-      width: 4rem;
-      height: 4rem;
-      background: url('/logo.png');
-      background-size: cover;
-    }
     nav {
       height: 100%;
       width: 100%;

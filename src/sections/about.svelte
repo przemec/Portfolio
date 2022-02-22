@@ -1,4 +1,5 @@
 <script>
+  import { scroll } from '$store';
   const age = Math.floor(new Date().getFullYear() - 2000.5);
 </script>
 
@@ -20,7 +21,7 @@
         href="#skills"
         on:click={(e) => {
           e.preventDefault();
-          document.querySelector('#skills')?.scrollIntoView({ behavior: 'smooth' });
+          $scroll.scrollTo(document.querySelector('#skills'));
         }}>web developer</a
       > located in Cracow, Poland.
     </p>
@@ -30,7 +31,7 @@
         href="#projects"
         on:click={(e) => {
           e.preventDefault();
-          document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
+          $scroll.scrollTo(document.querySelector('#projects'));
         }}>solving problems</a
       >. My affection towards coding started in high school, where I wrote my first lines of
       JavaScript.
@@ -45,7 +46,7 @@
         href="#contact"
         on:click={(e) => {
           e.preventDefault();
-          document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+          $scroll.scrollTo(document.querySelector('#contact'));
         }}>the future</a
       > I want to further explore Front End industry, as well as to learn more about Back End technologies,
       so that I can define myself as a Full Stack Developer.
