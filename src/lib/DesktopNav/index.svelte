@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { page } from '$app/stores';
   import { scroll } from '$store';
   import NavIndicator from './components/NavIndicator.svelte';
 
@@ -31,7 +30,7 @@
       <a
         href={`/#${tab.title}`}
         on:click={(e) => {
-          $page.url.pathname === '/' && e.preventDefault();
+          e.preventDefault();
           $scroll.scrollTo(document.querySelector(`#${tab.title}`));
           window.history.replaceState(null, '', `#${tab.title}`);
         }}

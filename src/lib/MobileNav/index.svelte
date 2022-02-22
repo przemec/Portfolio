@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { page } from '$app/stores';
   import { fly, fade } from 'svelte/transition';
   import { scroll } from '$store';
   import BurgerButton from './components/BurgerButton.svelte';
@@ -32,8 +31,8 @@
             <a
               href={`/#${tab}`}
               on:click={(e) => {
+                e.preventDefault();
                 set_hidden(true);
-                $page.url.pathname === '/' && e.preventDefault();
                 $scroll.scrollTo(document.querySelector(`#${tab}`));
                 window.history.replaceState(null, '', `#${tab}`);
               }}
