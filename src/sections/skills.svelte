@@ -1,4 +1,6 @@
-<script>
+<script lang="ts">
+  import { onMount } from 'svelte';
+
   let active_index = 0;
   let set_active_next = () => {
     active_index = active_index === 2 ? 0 : active_index + 1;
@@ -6,13 +8,45 @@
   let set_active_prev = () => {
     active_index = active_index === 0 ? 2 : active_index - 1;
   };
+
+  onMount(() => {
+    const navigation = document.querySelector('#carousel-navigation') as HTMLElement;
+    const maincard = document.querySelectorAll('.maincard')[0] as HTMLElement;
+    const fixButtonsPosition = () => {
+      navigation.style.transform = `translate(-50%, ${
+        maincard.offsetHeight * 0.5 + maincard.offsetHeight * 0.2 - navigation.offsetHeight * 0.5
+      }px)`;
+      navigation.style.width = `${maincard.offsetWidth + navigation.offsetHeight * 2}px`;
+    };
+    fixButtonsPosition();
+    const resizeObserver = new ResizeObserver(fixButtonsPosition);
+    resizeObserver.observe(maincard);
+  });
 </script>
 
 <section id="skills">
   <h1>Skills</h1>
-  <button on:click={set_active_next}>next</button>
-  <button on:click={set_active_prev}>prev</button>
   <div id="skills-carousel">
+    <div id="carousel-navigation">
+      <div on:click={set_active_prev} class="arrow-button prev">
+        <svg viewBox="0 0 22 22">
+          <path
+            d="m345.44 248.29l-194.29 194.28c-12.359 12.365-32.397 12.365-44.75 0-12.354-12.354-12.354-32.391 0-44.744l171.91-171.91-171.91-171.9c-12.354-12.359-12.354-32.394 0-44.748 12.354-12.359 32.391-12.359 44.75 0l194.29 194.28c6.177 6.18 9.262 14.271 9.262 22.366 0 8.099-3.091 16.196-9.267 22.373"
+            transform="matrix(-.03541-.00013-.00013.03541 19.02 3.02)"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
+      <div on:click={set_active_next} class="arrow-button next">
+        <svg viewBox="0 0 22 22">
+          <path
+            d="m345.44 248.29l-194.29 194.28c-12.359 12.365-32.397 12.365-44.75 0-12.354-12.354-12.354-32.391 0-44.744l171.91-171.91-171.91-171.9c-12.354-12.359-12.354-32.394 0-44.748 12.354-12.359 32.391-12.359 44.75 0l194.29 194.28c6.177 6.18 9.262 14.271 9.262 22.366 0 8.099-3.091 16.196-9.267 22.373"
+            transform="matrix(.03541-.00013.00013.03541 2.98 3.02)"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
+    </div>
     <div
       class="skills-wrapper"
       class:maincard={active_index === 0}
@@ -273,7 +307,7 @@
     flex-direction: column;
     color: var(--text-color);
 
-    button {
+    #carousel-navigation {
       display: none;
     }
     h1 {
@@ -286,6 +320,7 @@
     .skills-wrapper {
       width: 100%;
       margin-bottom: 2rem;
+      user-select: none;
 
       h2 {
         width: 100%;
@@ -293,7 +328,6 @@
         font-size: clamp(2rem, 5vw, 2.5rem);
         line-height: 1.3;
         text-align: center;
-        user-select: none;
       }
       ul {
         list-style-type: none;
@@ -324,13 +358,38 @@
       }
     }
     @media (min-width: 800px) {
-      button {
-        display: block;
+      #carousel-navigation {
         position: absolute;
-        top: 7rem;
-        left: 0;
-        &:nth-child(2) {
-          left: 5rem;
+        left: 50%;
+        width: 100%;
+        height: 5rem;
+        transform: translateX(-50%);
+        transition: transform 0.3s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .arrow-button {
+        cursor: pointer;
+        height: 100%;
+        width: 5rem;
+        transition: color 0.2s ease-in-out;
+        &:hover {
+          color: var(--text-color-selected);
+        }
+        svg {
+          width: 5rem;
+          height: 5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: transform 0.2s ease-in-out;
+        }
+        &.prev:hover svg {
+          transform: translateX(-0.7rem);
+        }
+        &.next:hover svg {
+          transform: translateX(0.7rem);
         }
       }
       #skills-carousel {
