@@ -3,7 +3,7 @@
 </script>
 
 <section id="skills">
-  <h1>Skills</h1>
+  <h1>My Skills</h1>
   <SkillsCarousel />
 </section>
 

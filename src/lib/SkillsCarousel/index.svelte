@@ -101,46 +101,49 @@
     }
   }
   @media (min-width: 800px) {
-    #carousel-navigation {
-      position: absolute;
-      left: 50%;
-      width: 100%;
-      height: 5rem;
-      transform: translateX(-50%);
-      transition: transform 0.3s ease-in-out;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .arrow-button {
-      cursor: pointer;
-      height: 100%;
-      width: 5rem;
-      transition: color 0.2s ease-in-out;
-      &:hover {
-        color: var(--text-color-selected);
-      }
-      svg {
-        width: 5rem;
-        height: 5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: transform 0.2s ease-in-out;
-      }
-      &.prev:hover svg {
-        transform: translateX(-0.7rem);
-      }
-      &.next:hover svg {
-        transform: translateX(0.7rem);
-      }
-    }
     #skills-carousel {
       width: 100%;
-      min-height: max(90vh, 80rem);
+      min-height: 60rem;
+      min-height: max(65vh, 60rem);
       transform-style: preserve-3d;
       perspective: 100px;
 
+      #carousel-navigation {
+        position: absolute;
+        left: 50%;
+        width: 100%;
+        height: 5rem;
+        transform: translateX(-50%);
+        transition: transform 0.3s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .arrow-button {
+          cursor: pointer;
+          height: 100%;
+          width: 5rem;
+          transition: color 0.2s ease-in-out;
+
+          svg {
+            width: 5rem;
+            height: 5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease-in-out;
+          }
+          &:hover {
+            color: var(--text-color-selected);
+          }
+          &.prev:hover svg {
+            transform: translateX(-0.7rem);
+          }
+          &.next:hover svg {
+            transform: translateX(0.7rem);
+          }
+        }
+      }
       .skills-wrapper {
         position: absolute;
         top: 0;
