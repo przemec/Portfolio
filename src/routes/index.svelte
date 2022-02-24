@@ -11,8 +11,6 @@
   import Contact from '$sections/contact.svelte';
   import Projects from '$sections/projects.svelte';
   import Skills from '$sections/skills.svelte';
-  import '../app.css';
-  import '../locomotive-scroll.css';
   import HeaderLogo from '$lib/HeaderLogo.svelte';
 
   let active_section = '';
@@ -77,10 +75,6 @@
     $page.url.hash && $scroll.scrollTo(document.querySelector($page.url.hash));
   });
 </script>
-
-<svelte:head>
-  <title>Przemek | Front End Developer</title>
-</svelte:head>
 
 <header>
   <nav>
