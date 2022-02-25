@@ -1,25 +1,29 @@
 function getSettings(settings = {}) {
-  return { scale: 1, max: 15, reverse: false, ...settings };
+  return { scale: 1, max: 7, reverse: false, isactive: true, ...settings };
 }
 
-const TRANSITION_MS = 300;
+const TRANSITION_MS = 250;
 
 export default function tilt(node, settingsObj) {
-  const { width, height, left, top } = node.getBoundingClientRect();
   let settings = getSettings(settingsObj);
   let reverse = settings.reverse ? -1 : 1;
+  let { isactive } = settings;
 
   function onMouseMove(e) {
-    const percX = (e.clientX - left) / width;
-    const percY = (e.clientY - top) / height;
-
+    if (!isactive) return;
+    const { width, height, left, top } = node.getBoundingClientRect();
+    let percX = (e.clientX - left) / width;
+    let percY = (e.clientY - top) / height;
     const { max, scale } = settings;
     const twiceMax = max * 2;
     const tiltX = max - percX * twiceMax;
     const tiltY = percY * twiceMax - max;
 
+    const initial_translate = new WebKitCSSMatrix(window.getComputedStyle(node).transform);
+    const { m41: init_translateX, m42: init_translateY } = initial_translate;
     node.style.transform =
-      `perspective(${1000}px) ` +
+      `translateY(${init_translateY}px) ` +
+      `translateX(${init_translateX}px) ` +
       `rotateX(${reverse * tiltY}deg) ` +
       `rotateY(${reverse * tiltX}deg) ` +
       `scale3d(${Array(3).fill(scale).join(', ')})`;
@@ -34,12 +38,13 @@ export default function tilt(node, settingsObj) {
   }
 
   function onMouseLeave() {
+    if (!isactive) return;
     smoothTransition();
-    node.style.transform =
-      `perspective(${1000}px) ` + `rotateX(0deg) ` + `rotateY(0deg) ` + `scale3d(1, 1, 1)`;
+    node.style.transform = '';
   }
 
   function onMouseEnter() {
+    if (!isactive) return;
     smoothTransition();
     node.style.willChange = 'transform';
   }
@@ -57,6 +62,12 @@ export default function tilt(node, settingsObj) {
     update(settingsObj) {
       settings = getSettings(settingsObj);
       reverse = settings.reverse ? -1 : 1;
+      if (!settings.isactive) {
+        node.style.transform = '';
+        node.style.transition = '';
+        isactive = settings.isactive;
+      }
+      setTimeout(() => (isactive = settings.isactive), TRANSITION_MS + 100);
     }
   };
 }
