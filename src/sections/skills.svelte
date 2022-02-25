@@ -14,7 +14,7 @@
     max-width: 100rem;
     padding: 10vh 0.5rem;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     flex-direction: column;
     color: var(--text-color);
