@@ -165,7 +165,7 @@
         border-radius: 1rem;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
         transform: translate(-50%, -50%);
-        transition: transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
         .skills-group {
           position: relative;
@@ -187,15 +187,17 @@
         transform: translate(-50%, 20%);
       }
       .skills-wrapper.rightcard {
-        transform: translate(-30%, 0%) translateZ(-100px) scale(1.07);
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+        transform: translate(-30%, 0%) translateZ(-100px) scale(1.07) rotateY(-8deg);
         .skills-group {
           opacity: 0.4;
         }
       }
       .skills-wrapper.leftcard {
-        transform: translate(-70%, 10%) translateZ(-200px) scale(1.15);
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        transform: translate(-70%, 5%) translateZ(-200px) scale(1.15) rotateY(15deg);
         .skills-group {
-          opacity: 0.1;
+          opacity: 0.2;
         }
       }
     }
