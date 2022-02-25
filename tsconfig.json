@@ -29,8 +29,8 @@
       "$sections/*": ["src/sections/*"],
       "$routes": ["src/routes"],
       "$routes/*": ["src/routes/*"],
-      "$helpers": ["src/helpers"],
-      "$helpers/*": ["src/helpers/*"],
+      "$interactions": ["src/interactions"],
+      "$interactions/*": ["src/interactions/*"],
       "$store": ["src/store"],
       "$store/*": ["src/store/*"]
     }
