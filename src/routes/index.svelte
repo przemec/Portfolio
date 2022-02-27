@@ -77,8 +77,9 @@
   });
 </script>
 
+<SkipToContentButton />
+
 <header>
-  <SkipToContentButton />
   <nav>
     <HeaderLogo />
     <div id="desktop_nav">
