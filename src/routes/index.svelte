@@ -12,6 +12,7 @@
   import Projects from '$sections/projects.svelte';
   import Skills from '$sections/skills.svelte';
   import HeaderLogo from '$lib/HeaderLogo.svelte';
+  import SkipToContentButton from '$lib/SkipToContentButton.svelte';
 
   let active_section = '';
   let sections = ['main', 'about', 'skills', 'projects', 'contact'];
@@ -77,6 +78,7 @@
 </script>
 
 <header>
+  <SkipToContentButton />
   <nav>
     <HeaderLogo />
     <div id="desktop_nav">
@@ -89,10 +91,11 @@
   </nav>
 </header>
 
+<div id="vertical_links">
+  <LinksPanelVertical />
+</div>
+
 <div data-scroll-container id="content">
-  <div id="vertical_links">
-    <LinksPanelVertical />
-  </div>
   <main data-scroll-section>
     <Main />
     <About />
