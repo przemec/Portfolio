@@ -30,7 +30,7 @@
 
 <div id="skills-carousel">
   <div id="carousel-navigation">
-    <div tabindex="0" on:click={set_active_prev} class="arrow-button prev">
+    <button on:click={set_active_prev} class="button-prev">
       <svg viewBox="0 0 22 22">
         <path
           d="m345.44 248.29l-194.29 194.28c-12.359 12.365-32.397 12.365-44.75 0-12.354-12.354-12.354-32.391 0-44.744l171.91-171.91-171.91-171.9c-12.354-12.359-12.354-32.394 0-44.748 12.354-12.359 32.391-12.359 44.75 0l194.29 194.28c6.177 6.18 9.262 14.271 9.262 22.366 0 8.099-3.091 16.196-9.267 22.373"
@@ -38,8 +38,8 @@
           fill="currentColor"
         />
       </svg>
-    </div>
-    <div tabindex="0" on:click={set_active_next} class="arrow-button next">
+    </button>
+    <button on:click={set_active_next} class="button-next">
       <svg viewBox="0 0 22 22">
         <path
           d="m345.44 248.29l-194.29 194.28c-12.359 12.365-32.397 12.365-44.75 0-12.354-12.354-12.354-32.391 0-44.744l171.91-171.91-171.91-171.9c-12.354-12.359-12.354-32.394 0-44.748 12.354-12.359 32.391-12.359 44.75 0l194.29 194.28c6.177 6.18 9.262 14.271 9.262 22.366 0 8.099-3.091 16.196-9.267 22.373"
@@ -47,7 +47,7 @@
           fill="currentColor"
         />
       </svg>
-    </div>
+    </button>
   </div>
   <div
     class="skills-wrapper"
@@ -123,12 +123,16 @@
         align-items: center;
         justify-content: space-between;
 
-        .arrow-button {
+        button {
           cursor: pointer;
           z-index: 2;
           height: 100%;
           width: 5rem;
+          padding: 0;
           transition: color 0.2s ease-in-out;
+          color: var(--text-color);
+          background: transparent;
+          border: none;
 
           svg {
             width: 5rem;
@@ -142,12 +146,12 @@
           &:focus-visible {
             color: var(--primary);
           }
-          &.prev:hover svg,
-          &.prev:focus-visible svg {
+          &.button-prev:hover svg,
+          &.button-prev:focus-visible svg {
             transform: translateX(-0.7rem);
           }
-          &.next:hover svg,
-          &.next:focus-visible svg {
+          &.button-next:hover svg,
+          &.button-next:focus-visible svg {
             transform: translateX(0.7rem);
           }
         }
