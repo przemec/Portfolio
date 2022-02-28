@@ -29,8 +29,7 @@
       {#if active_section === tab.title || tab.ishovered}<NavIndicator />{/if}
       <a
         href={`/#${tab.title}`}
-        on:click={(e) => {
-          e.preventDefault();
+        on:click={() => {
           $scroll.scrollTo(document.querySelector(`#${tab.title}`));
           window.history.replaceState(null, '', `#${tab.title}`);
         }}

@@ -2,10 +2,9 @@
   import { scroll } from '$store';
 </script>
 
-<div
+<button
   id="logo"
-  on:click={(e) => {
-    e.preventDefault();
+  on:click={() => {
     $scroll.scrollTo(0);
     window.history.replaceState(null, '', '/');
   }}
@@ -19,5 +18,7 @@
     height: 4rem;
     background: url('/logo.png');
     background-size: cover;
+    padding: 0;
+    border: none;
   }
 </style>

@@ -1,4 +1,6 @@
-<a href={'/#content'}>Skip to Content</a>
+<a href={'/#content'} on:click={() => window.history.replaceState(null, '', '#content')}
+  >Skip to Content</a
+>
 
 <style lang="scss">
   a {

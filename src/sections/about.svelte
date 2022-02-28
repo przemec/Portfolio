@@ -19,9 +19,9 @@
       I'm {age} years old
       <a
         href="#skills"
-        on:click={(e) => {
-          e.preventDefault();
+        on:click={() => {
           $scroll.scrollTo(document.querySelector('#skills'));
+          window.history.replaceState(null, '', '#skills');
         }}>web developer</a
       > located in Cracow, Poland.
     </p>
@@ -29,9 +29,9 @@
       I'm well-organised person who loves
       <a
         href="#projects"
-        on:click={(e) => {
-          e.preventDefault();
+        on:click={() => {
           $scroll.scrollTo(document.querySelector('#projects'));
+          window.history.replaceState(null, '', '#projects');
         }}>solving problems</a
       >. My affection towards coding started in high school, where I wrote my first lines of
       JavaScript.
@@ -44,9 +44,9 @@
       In
       <a
         href="#contact"
-        on:click={(e) => {
-          e.preventDefault();
+        on:click={() => {
           $scroll.scrollTo(document.querySelector('#contact'));
+          window.history.replaceState(null, '', '#contact');
         }}>the future</a
       > I want to further explore Front End industry, as well as to learn more about Back End technologies,
       so that I can define myself as a Full Stack Developer.

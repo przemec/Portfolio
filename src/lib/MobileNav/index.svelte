@@ -31,7 +31,6 @@
             <a
               href={`/#${tab}`}
               on:click={(e) => {
-                e.preventDefault();
                 set_hidden(true);
                 $scroll.scrollTo(document.querySelector(`#${tab}`));
                 window.history.replaceState(null, '', `#${tab}`);
