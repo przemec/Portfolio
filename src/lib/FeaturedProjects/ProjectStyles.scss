@@ -30,9 +30,23 @@
       padding: 0;
       display: flex;
       gap: 1rem;
+
+      li {
+        display: block;
+        position: relative;
+        width: 3.2rem;
+        height: 4rem;
+
+        &:hover {
+          color: var(--text-color-selected);
+        }
+        svg {
+          pointer-events: none;
+        }
+      }
     }
     h3 {
-      height: 3.5rem;
+      min-height: 3.5rem;
       line-height: 3.5rem;
       font-size: 2rem;
       transition: color 0.3s ease-in-out;

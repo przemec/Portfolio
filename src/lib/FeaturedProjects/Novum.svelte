@@ -1,5 +1,7 @@
 <script lang="ts">
   import './ProjectStyles.scss';
+  import Tooltip from '../Tooltip.svelte';
+  import { tooltip } from '$interactions/tooltip';
   const start = Math.floor(new Date().getFullYear() - 2017.7);
 </script>
 
@@ -11,9 +13,9 @@
     2022 and is now listed on official BetterDiscord's theme list.
   </p>
   <div class="horizontal-section">
-    <h3>Technologies used</h3>
+    <h3>Technologies used:</h3>
     <ul>
-      <li>
+      <li use:tooltip={{ content: Tooltip, text: 'CSS3' }}>
         <svg viewBox="0 0 128 128">
           <path
             fill="currentColor"
@@ -21,7 +23,7 @@
           />
         </svg>
       </li>
-      <li>
+      <li use:tooltip={{ content: Tooltip, text: 'Sass' }}>
         <svg viewBox="0 0 128 128">
           <path
             fill-rule="evenodd"
@@ -31,11 +33,19 @@
           />
         </svg>
       </li>
+      <li use:tooltip={{ content: Tooltip, text: 'BetterDiscord' }}>
+        <svg viewBox="0 0 1.1 1.1">
+          <path
+            fill="currentColor"
+            d="M0,0C0.372-.006.689-0.042,0.74,0.28A1.43,1.43,0,0,1,.68.51C0.692,0.547.72,0.583,0.73,0.62A0.285,0.285,0,0,1,.72.79C0.635,1.042.335,1,0,1V0.8c0.143,0,.3,0,0.43-0.01A0.188,0.188,0,0,0,.49.68C0.466,0.652.445,0.627,0.42,0.6H0.27V0.41A0.562,0.562,0,0,0,.46.38,0.469,0.469,0,0,0,.49.29,0.2,0.2,0,0,1,.47.25,0.25,0.25,0,0,1,.42.21H0.22V0.64H0.21A2.593,2.593,0,0,1,0,.45V0ZM0.64,0C1.1,0,1.009.39,1,.83H0.99A0.348,0.348,0,0,1,.65,1V0.99H0.66A0.463,0.463,0,0,0,.78.84,1.766,1.766,0,0,0,.79.35,0.621,0.621,0,0,0,.78.16,0.466,0.466,0,0,0,.64,0Z"
+          />
+        </svg>
+      </li>
     </ul>
   </div>
   <a href="https://github.com/przemec/Novum" target="_blank" class="horizontal-section">
     <h3>Source code on GitHub</h3>
-    <svg viewBox="0 0 1 1" class="align-self-start">
+    <svg viewBox="0 0 1.1 1.1" class="align-self-start">
       <path
         fill="currentColor"
         d="M0.37,0.87a0.541,0.541,0,0,1,0,.1A0.031,0.031,0,0,1,.36.99,0.088,0.088,0,0,1,.33,1,0.5,0.5,0,0,1,.08.78,0.525,0.525,0,0,1,0,.49,0.524,0.524,0,0,1,.5,0,0.5,0.5,0,0,1,1,.461,0.494,0.494,0,0,1,.65,1,0.021,0.021,0,0,1,.63.98,0.785,0.785,0,0,1,.62.81,0.144,0.144,0,0,0,.59.72,0.23,0.23,0,0,0,.77.35,0.181,0.181,0,0,0,.78.28,0.239,0.239,0,0,0,.76.21,0.162,0.162,0,0,0,.64.26H0.37C0.306,0.209.236,0.2,0.233,0.222A0.182,0.182,0,0,0,.24.34,0.382,0.382,0,0,0,.192.41,0.311,0.311,0,0,0,.22.62,0.189,0.189,0,0,0,.3.69,0.414,0.414,0,0,0,.4.72,0.216,0.216,0,0,0,.39.76c0,0.048-.014.053-0.11,0.04A0.187,0.187,0,0,0,.15.7s-0.019.012,0,.032A1.014,1.014,0,0,1,.25.84,0.179,0.179,0,0,0,.37.87Z"
