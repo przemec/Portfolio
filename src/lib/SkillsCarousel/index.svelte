@@ -12,7 +12,7 @@
   let set_active_prev = () => {
     active_index = active_index === 0 ? 2 : active_index - 1;
   };
-
+  let ismobile = false;
   onMount(() => {
     const navigation = document.querySelector('#carousel-navigation') as HTMLElement;
     const maincard = document.querySelectorAll('.maincard')[0] as HTMLElement;
@@ -21,6 +21,8 @@
         maincard.offsetHeight * 0.5 + maincard.offsetHeight * 0.2 - navigation.offsetHeight * 0.5
       }px)`;
       navigation.style.width = `${maincard.offsetWidth + navigation.offsetHeight * 2.5}px`;
+      if (document.body.getBoundingClientRect().width < 800 && !ismobile) ismobile = true;
+      else if (document.body.getBoundingClientRect().width >= 800 && ismobile) ismobile = false;
     };
     fixButtonsPosition();
     const resizeObserver = new ResizeObserver(fixButtonsPosition);
@@ -54,7 +56,7 @@
     class:maincard={active_index === 0}
     class:rightcard={active_index === 2}
     class:leftcard={active_index === 1}
-    use:tilt={{ isactive: active_index === 0 }}
+    use:tilt={{ isactive: active_index === 0 && !ismobile }}
   >
     <div class="skills-group">
       <h2>Technologies & tools I feel comfortable working with:</h2>
@@ -66,7 +68,7 @@
     class:maincard={active_index === 1}
     class:rightcard={active_index === 0}
     class:leftcard={active_index === 2}
-    use:tilt={{ isactive: active_index === 1 }}
+    use:tilt={{ isactive: active_index === 1 && !ismobile }}
   >
     <div class="skills-group">
       <h2>Technologies & tools I know the very basics of:</h2>
@@ -78,7 +80,7 @@
     class:maincard={active_index === 2}
     class:rightcard={active_index === 1}
     class:leftcard={active_index === 0}
-    use:tilt={{ isactive: active_index === 2 }}
+    use:tilt={{ isactive: active_index === 2 && !ismobile }}
   >
     <div class="skills-group">
       <h2>Technologies & tools I intend to learn in the future:</h2>
@@ -93,8 +95,11 @@
   }
   .skills-wrapper {
     width: 100%;
-    margin-bottom: 2rem;
     user-select: none;
+    padding: 3rem 0 1rem;
+    &:nth-of-type(2n) {
+      background: var(--background-light);
+    }
 
     h2 {
       width: 100%;
@@ -165,6 +170,7 @@
         height: 60%;
         height: clamp(45rem, 50vh, 50rem);
         margin: 0;
+        padding: 0;
         background: var(--background);
         border-radius: 1rem;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
