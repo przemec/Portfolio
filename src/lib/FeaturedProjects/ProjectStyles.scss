@@ -1,0 +1,64 @@
+.project-wrapper {
+  max-width: 80rem;
+  padding: 3rem 1rem;
+  &:nth-of-type(2n - 1) {
+    background: var(--background-light);
+  }
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  p {
+    margin-bottom: 2rem;
+  }
+  .horizontal-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 1rem;
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      gap: 1rem;
+    }
+    h3 {
+      height: 3.5rem;
+      line-height: 3.5rem;
+      font-size: 2rem;
+      transition: color 0.3s ease-in-out;
+    }
+    svg {
+      width: 3.2rem;
+      height: 3.2rem;
+      transition: color 0.3s ease-in-out;
+    }
+    svg.align-self-start {
+      align-self: flex-start;
+    }
+  }
+  a {
+    height: 3.5rem;
+    width: auto;
+    text-decoration: none;
+    color: var(--text-color);
+
+    &:hover h3,
+    &:focus-visible h3 {
+      color: var(--text-color-selected);
+    }
+    &:hover svg,
+    &:focus-visible svg {
+      color: var(--primary);
+    }
+  }
+}
