@@ -1,4 +1,5 @@
 import adapter from '@sveltejs/adapter-auto';
+import adapterstatic from '@sveltejs/adapter-static';
 import preprocess from 'svelte-preprocess';
 import autoprefixer from 'autoprefixer';
 import path from 'path';
@@ -14,7 +15,10 @@ const config = {
   }),
 
   kit: {
-    adapter: adapter(),
+    adapter: adapterstatic({
+      pages: 'public',
+      assets: 'public',
+    }),
 
     vite: {
       resolve: {
