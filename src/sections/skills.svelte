@@ -12,7 +12,7 @@
     position: relative;
     width: 100%;
     max-width: 100rem;
-    padding: 10vh 0.5rem;
+    padding: 10vh 0;
     display: flex;
     align-items: center;
     justify-content: center;

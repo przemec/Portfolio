@@ -96,7 +96,7 @@
   .skills-wrapper {
     width: 100%;
     user-select: none;
-    padding: 3rem 0 1rem;
+    padding: 3rem 0.5rem 1rem;
     &:nth-of-type(2n) {
       background: var(--background-light);
     }
