@@ -1,11 +1,9 @@
 <script lang="ts">
   import { fly, fade } from 'svelte/transition';
-  import { scroll } from '$store';
+  import { scroll, active_section} from '$store';
   import BurgerButton from './components/BurgerButton.svelte';
   import NavIndicator from './components/NavIndicator.svelte';
   import LinksPanel from '../LinksPanelHorizontal.svelte';
-
-  export let active_section;
 
   let tabs = ['about', 'skills', 'projects', 'contact'];
   let ishidden = true;
@@ -26,8 +24,8 @@
     >
       <nav>
         {#each tabs as tab}
-          <div class="tab" class:active={active_section === tab}>
-            {#if active_section === tab}<NavIndicator />{/if}
+          <div class="tab" class:active={$active_section === tab}>
+            {#if $active_section === tab}<NavIndicator />{/if}
             <a
               href={`/#${tab}`}
               on:click={(e) => {

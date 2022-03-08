@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import { page } from '$app/stores';
   import { scroll } from '$store';
+  import { updateHeaderDisplay, updateScrollTipDisplay } from '$interactions/scroll-events';
   import MobileNav from '$lib/MobileNav/index.svelte';
   import LinksPanelHorizontal from '$lib/LinksPanelHorizontal.svelte';
   import DesktopNav from '$lib/DesktopNav/index.svelte';
@@ -13,9 +14,6 @@
   import Skills from '$sections/skills.svelte';
   import HeaderLogo from '$lib/HeaderLogo.svelte';
   import SkipToContentButton from '$lib/SkipToContentButton.svelte';
-
-  let active_section = '';
-  let sections = ['main', 'about', 'skills', 'projects', 'contact'];
 
   onMount(async () => {
     let LocomotiveScroll = (await import('locomotive-scroll')).default;
@@ -36,41 +34,14 @@
         }
       })
     );
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.intersectionRatio > 0.7) {
-            active_section = entry.target.id;
-          }
-        });
-      },
-      {
-        threshold: 0.7
-      }
-    );
-    sections.forEach((section) => {
-      const section_element = document.querySelector(`#${section}`);
-      if (section_element) observer.observe(section_element);
-    });
 
-    const onwindowscroll = (scrollY, direction) => {
-      if (direction === 'down') {
-        document.getElementsByTagName('header')[0].classList.toggle('ishidden', true);
-      } else {
-        document.getElementsByTagName('header')[0].classList.toggle('ishidden', false);
-      }
-      if (Math.floor(scrollY - 5) > 0) {
-        document.getElementById('scroll-tip').classList.toggle('scrolled', true);
-        document.getElementsByTagName('header')[0].classList.toggle('isscrolled', true);
-      } else {
-        document.getElementById('scroll-tip').classList.toggle('scrolled', false);
-        document.getElementsByTagName('header')[0].classList.toggle('isscrolled', false);
-      }
-    };
+    let initActiveSectionObserver = (await import('$interactions/active-section-observer')).default;
+    initActiveSectionObserver();
 
-    onwindowscroll(0, 'up');
+    updateHeaderDisplay(0, 'up');
     $scroll.on('scroll', (args) => {
-      onwindowscroll(args.scroll.y, args.direction);
+      updateScrollTipDisplay(args.scroll.y);
+      updateHeaderDisplay(args.scroll.y, args.direction);
     });
 
     $page.url.hash && $scroll.scrollTo(document.querySelector($page.url.hash));
@@ -83,10 +54,10 @@
   <nav>
     <HeaderLogo />
     <div id="desktop_nav">
-      <DesktopNav {active_section} />
+      <DesktopNav />
     </div>
     <div id="mobile_nav">
-      <MobileNav {active_section} />
+      <MobileNav />
     </div>
     <div id="filler" />
   </nav>

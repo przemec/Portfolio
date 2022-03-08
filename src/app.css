@@ -87,7 +87,7 @@ a::selection {
   display: flex;
 }
 
-#scroll-tip.scrolled {
+#scroll-tip.isscrolled {
   animation: fadeout 1s forwards !important;
 }
 @keyframes fadeout {

@@ -1,8 +1,6 @@
 <script lang="ts">
-  import { scroll } from '$store';
+  import { scroll, active_section } from '$store';
   import NavIndicator from './components/NavIndicator.svelte';
-
-  export let active_section;
 
   let tabs = [
     { ishovered: false, title: 'about' },
@@ -19,14 +17,14 @@
   {#each tabs as tab}
     <div
       class="tab"
-      class:active={active_section === tab.title}
+      class:active={$active_section === tab.title}
       on:mouseenter={() => (tab.ishovered = true)}
       on:mouseleave={() => (tab.ishovered = false)}
       on:focusin={() => (tab.ishovered = true)}
       on:focusout={() => (tab.ishovered = false)}
       on:click={() => (tab.ishovered = false)}
     >
-      {#if active_section === tab.title || tab.ishovered}<NavIndicator />{/if}
+      {#if $active_section === tab.title || tab.ishovered}<NavIndicator />{/if}
       <a
         href={`/#${tab.title}`}
         on:click={() => {
