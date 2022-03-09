@@ -3,6 +3,7 @@
   import { page } from '$app/stores';
   import { scroll } from '$store';
   import { updateHeaderDisplay, updateScrollTipDisplay } from '$interactions/scroll-events';
+  import IntroPage from '$lib/IntroPage.svelte';
   import MobileNav from '$lib/MobileNav/index.svelte';
   import LinksPanelHorizontal from '$lib/LinksPanelHorizontal.svelte';
   import DesktopNav from '$lib/DesktopNav/index.svelte';
@@ -68,6 +69,8 @@
 <div id="vertical_links">
   <LinksPanelVertical />
 </div>
+
+<IntroPage />
 
 <div data-scroll-container id="content">
   <main data-scroll-section>
