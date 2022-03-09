@@ -55,9 +55,10 @@
     display: flex;
     flex: 1;
     justify-content: center;
+    transition: transform 0.2s ease-in-out;
 
     &.active {
-      // transform: translateY(0.6rem);
+      transform: translateY(0.6rem);
     }
     a {
       display: flex;
