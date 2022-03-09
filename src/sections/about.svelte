@@ -9,7 +9,8 @@
       <div
         class="stripes"
         data-scroll
-        data-scroll-speed="1.5"
+        data-scroll-speed="-3"
+        data-scroll-direction="horizontal"
         data-scroll-id="stripes"
         data-scroll-target="#about-container"
       />
@@ -67,6 +68,7 @@
     position: relative;
     width: 100%;
     padding: 3rem 0.2rem;
+    border-radius: 2rem;
     color: var(--text-color);
     overflow: hidden;
   }
@@ -121,21 +123,17 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
+    transform: translate(-50%, -50%);
 
     .stripes {
-      width: 100rem;
-      height: 10rem;
-      background: linear-gradient(
-        0deg,
-        var(--background-light) 20%,
-        var(--background) 20%,
-        var(--background) 40%,
-        var(--background-light) 40%,
-        var(--background-light) 60%,
-        var(--background) 60%,
-        var(--background) 80%,
-        var(--background-light) 80%
+      width: 130rem;
+      height: 100vh;
+      background: repeating-linear-gradient(
+        45deg,
+        var(--background-light) 0rem,
+        var(--background-light) 2rem,
+        var(--background) 2rem,
+        var(--background) 5rem,
       );
     }
   }
