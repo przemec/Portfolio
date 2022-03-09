@@ -141,9 +141,6 @@
     transform: translateX(-50%);
     border: 0.2rem solid rgba(255, 255, 255, 0.3);
     border-radius: 5.4rem;
-    opacity: 0;
-    animation: fadein 2s forwards;
-    animation-delay: 1s;
 
     &::before {
       content: '';
@@ -170,16 +167,6 @@
     to {
       opacity: 0;
       top: 4rem;
-    }
-  }
-  @keyframes fadein {
-    to {
-      opacity: 1;
-    }
-  }
-  @-webkit-keyframes fadein {
-    to {
-      opacity: 1;
     }
   }
 </style>

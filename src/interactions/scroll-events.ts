@@ -4,4 +4,5 @@ export const updateHeaderDisplay = (scrollY: number, direction: string) => {
 };
 export const updateScrollTipDisplay = (scrollY: number) => {
   document.getElementById('scroll-tip').classList.toggle('isscrolled', Math.floor(scrollY - 5) > 0);
+  document.getElementById('scroll-tip').classList.toggle('istop', Math.floor(scrollY - 5) <= 0);
 };

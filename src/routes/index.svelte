@@ -17,6 +17,9 @@
 
   onMount(async () => {
     let LocomotiveScroll = (await import('locomotive-scroll')).default;
+    let animatePageLoad = (await import('$interactions/gsap-page-load')).default;
+    let initActiveSectionObserver = (await import('$interactions/active-section-observer')).default;
+
     scroll.set(
       new LocomotiveScroll({
         el: document.querySelector('[data-scroll-container]'),
@@ -34,8 +37,7 @@
         }
       })
     );
-
-    let initActiveSectionObserver = (await import('$interactions/active-section-observer')).default;
+    animatePageLoad();
     initActiveSectionObserver();
 
     updateHeaderDisplay(0, 'up');

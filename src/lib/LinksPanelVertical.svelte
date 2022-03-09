@@ -123,8 +123,6 @@
       height: 3.6rem;
       border-radius: 0.5rem;
       transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
-      opacity: 0;
-      animation: fadein 1s forwards;
     }
     &:hover div,
     &:focus-visible div {
@@ -167,46 +165,26 @@
     &#link-gh div,
     &#link-gh div::before,
     &#link-gh div::after {
-      animation-delay: 0.3s;
       clip-path: url(#clip-gh);
     }
     &#link-li div,
     &#link-li div::before,
     &#link-li div::after {
-      animation-delay: 0.4s;
       clip-path: url(#clip-li);
     }
     &#link-gm div,
     &#link-gm div::before,
     &#link-gm div::after {
-      animation-delay: 0.5s;
       clip-path: url(#clip-gm);
     }
     &#link-bd div,
     &#link-bd div::before,
     &#link-bd div::after {
-      animation-delay: 0.6s;
       clip-path: url(#clip-bd);
     }
     svg {
       width: 0;
       height: 0;
-    }
-  }
-  @keyframes fadein {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  @-webkit-keyframes fadein {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
     }
   }
 </style>
