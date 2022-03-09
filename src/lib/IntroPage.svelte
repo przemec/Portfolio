@@ -1,16 +1,18 @@
-<div id="intro_wrapper">
-  <div id="intro_background_color" />
-  <div id="intro_background_grey" />
+<div id="intro_wrapper" class="fullscreen">
+  <div id="intro_background_color" class="fullscreen" />
+  <div id="intro_background_grey" class="fullscreen" />
 </div>
 
 <style lang="scss">
-  #intro_wrapper {
+  .fullscreen {
     z-index: 20;
     position: absolute;
     top: 0;
     left: 0;
     height: 100vh;
     width: 100vw;
+  }
+  #intro_wrapper {
     background: repeating-linear-gradient(
       45deg,
       var(--background) 0rem,
@@ -30,11 +32,6 @@
     );
   }
   #intro_background_color {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
     clip-path: circle(0% at 50% 50%);
     background: repeating-linear-gradient(
       45deg,
@@ -56,12 +53,6 @@
   }
   #intro_background_grey {
     z-index: 21;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    color: var(--text-color);
     clip-path: circle(0% at 50% 50%);
     background: var(--background);
   }
