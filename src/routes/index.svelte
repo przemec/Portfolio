@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { scroll } from '$store';
   import IntroPage from '$lib/IntroPage.svelte';
   import MobileNav from '$lib/MobileNav/index.svelte';
   import LinksPanelHorizontal from '$lib/LinksPanelHorizontal.svelte';
@@ -14,8 +15,12 @@
   import SkipToContentButton from '$lib/SkipToContentButton.svelte';
 
   onMount(async () => {
+    document.body.style.overflow = 'hidden';
+    const initLocomotiveScroll = (await import('$interactions/init-locomotive-scroll')).default;
+    await initLocomotiveScroll();
+    $scroll.scrollTo(0, { duration: 0 });
     const initInteractions = (await import('$interactions/init-interactions')).default;
-    initInteractions()
+    initInteractions();
   });
 </script>
 

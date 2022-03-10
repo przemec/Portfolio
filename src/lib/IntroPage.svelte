@@ -1,4 +1,4 @@
-<div id="intro_wrapper" class="fullscreen">
+<div id="intro_wrapper" class="fullscreen" on:wheel={(e) => e.preventDefault()}>
   <div id="intro_background_color" class="fullscreen" />
   <div id="intro_background_grey" class="fullscreen" />
 </div>
@@ -6,7 +6,7 @@
 <style lang="scss">
   .fullscreen {
     z-index: 20;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
