@@ -1,8 +1,5 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { page } from '$app/stores';
-  import { scroll } from '$store';
-  import { updateHeaderDisplay, updateScrollTipDisplay } from '$interactions/scroll-events';
   import IntroPage from '$lib/IntroPage.svelte';
   import MobileNav from '$lib/MobileNav/index.svelte';
   import LinksPanelHorizontal from '$lib/LinksPanelHorizontal.svelte';
@@ -17,41 +14,8 @@
   import SkipToContentButton from '$lib/SkipToContentButton.svelte';
 
   onMount(async () => {
-    let LocomotiveScroll = (await import('locomotive-scroll')).default;
-    let animatePageLoad = (await import('$interactions/gsap-page-load')).default;
-    let initActiveSectionObserver = (await import('$interactions/active-section-observer')).default;
-
-    scroll.set(
-      new LocomotiveScroll({
-        el: document.querySelector('[data-scroll-container]'),
-        smooth: true,
-        getDirection: true,
-        mobile: {
-          breakpoint: 0,
-          smooth: false,
-          getDirection: true
-        },
-        tablet: {
-          breakpoint: 0,
-          smooth: false,
-          getDirection: true
-        }
-      })
-    );
-    $scroll.scrollTo(0);
-    const onPageLoadComplete = () => {
-      initActiveSectionObserver();
-
-      updateHeaderDisplay(0, 'up');
-      $scroll.on('scroll', (args) => {
-        updateScrollTipDisplay(args.scroll.y);
-        updateHeaderDisplay(args.scroll.y, args.direction);
-      });
-
-      $page.url.hash && $scroll.scrollTo(document.querySelector($page.url.hash));
-    };
-
-    animatePageLoad(onPageLoadComplete);
+    const initInteractions = (await import('$interactions/init-interactions')).default;
+    initInteractions()
   });
 </script>
 
