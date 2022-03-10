@@ -1,9 +1,12 @@
 import gsap from 'gsap';
 
 export default (onComplete) => {
-  const pageload = gsap.timeline({ defaults: { duration: 0.4 } });
+  const page_load_timeline = gsap.timeline({ defaults: { duration: 0.4 } });
   const intro_circle_size = { size_color: 0, size_grey: 0 };
-  pageload
+
+  const { matches: ismobile } = window.matchMedia('(max-width: 800px)');
+
+  page_load_timeline
     .to(intro_circle_size, {
       size_color: 80,
       duration: 2,
@@ -31,8 +34,15 @@ export default (onComplete) => {
     .from('#main h2', { opacity: 0, scale: 0 })
     .from('#main h1', { opacity: 0, scale: 0, delay: 0.2 })
     .from('#main p', { opacity: 0, delay: 0.4 })
-    .from('#logo', { opacity: 0, delay: 0.4, onComplete })
-    .from('header .tab', { opacity: 0, marginTop: '-10rem', stagger: 0.1 }, '<')
-    .from('#vertical_links a', { opacity: 0, x: '100%', stagger: 0.1 }, '<0.4')
-    .from('#scroll-tip', { opacity: 0, delay: 0.5 });
+    .from('#logo', { opacity: 0, marginTop: '-5rem', delay: 0.4, onComplete });
+
+  if (ismobile)
+    page_load_timeline
+      .from('#mobile_nav .hamburger', { opacity: 0, marginTop: '-5rem', stagger: 0.1 }, '<')
+      .from('#scroll-tip', { opacity: 0, delay: 0.5 });
+  else
+    page_load_timeline
+      .from('header .tab', { opacity: 0, marginTop: '-10rem', stagger: 0.1 }, '<')
+      .from('#vertical_links a', { opacity: 0, x: '100%', stagger: 0.1 }, '<0.4')
+      .from('#scroll-tip', { opacity: 0, delay: 0.5 });
 };
