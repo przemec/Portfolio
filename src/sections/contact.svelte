@@ -10,7 +10,7 @@
     questions, don't hesitate to contact me.
   </p>
   <button
-    use:tooltip={{ content: Tooltip, text: 'Copy email to clipboard' }}
+    use:tooltip={{ content: Tooltip, text: 'Copy email to clipboard', isKeyboardFocusable: true }}
     on:click={() => {
       navigator.clipboard.writeText('pszczepaniak000@gmail.com');
       document.querySelector('.tooltip-wrapper .content').textContent = 'Email has been copied!'
