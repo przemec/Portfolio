@@ -1,14 +1,14 @@
 <script>
   import Novum from '$lib/FeaturedProjects/Novum.svelte';
   import PlaylistRandomizer from '$lib/FeaturedProjects/PlaylistRandomizer.svelte';
-  import Tbd from '$lib/FeaturedProjects/TBD.svelte';
+  import NurseScheduling from '$lib/FeaturedProjects/NurseScheduling.svelte';
 </script>
 
 <section id="projects">
   <h1>Featured Projects</h1>
   <PlaylistRandomizer />
   <Novum />
-  <Tbd />
+  <NurseScheduling />
 </section>
 
 <style lang="scss">
