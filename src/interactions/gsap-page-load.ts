@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 
-export default () => {
+export default (onComplete) => {
   const pageload = gsap.timeline({ defaults: { duration: 0.4 } });
   const intro_circle_size = { size_color: 0, size_grey: 0 };
   pageload
@@ -30,7 +30,7 @@ export default () => {
     .from('#main h2', { opacity: 0, scale: 0 })
     .from('#main h1', { opacity: 0, scale: 0, delay: 0.2 })
     .from('#main p', { opacity: 0, delay: 0.4 })
-    .from('#logo', { opacity: 0, delay: 0.4 })
+    .from('#logo', { opacity: 0, delay: 0.4, onComplete })
     .from('header .tab', { opacity: 0, marginTop: '-10rem', stagger: 0.1 }, '<')
     .from('#vertical_links a', { opacity: 0, x: '100%', stagger: 0.1 }, '<0.4')
     .from('#scroll-tip', { opacity: 0, delay: 0.5 });

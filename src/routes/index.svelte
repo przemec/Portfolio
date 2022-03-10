@@ -38,16 +38,20 @@
         }
       })
     );
-    animatePageLoad();
-    initActiveSectionObserver();
+    $scroll.scrollTo(0);
+    const onPageLoadComplete = () => {
+      initActiveSectionObserver();
 
-    updateHeaderDisplay(0, 'up');
-    $scroll.on('scroll', (args) => {
-      updateScrollTipDisplay(args.scroll.y);
-      updateHeaderDisplay(args.scroll.y, args.direction);
-    });
+      updateHeaderDisplay(0, 'up');
+      $scroll.on('scroll', (args) => {
+        updateScrollTipDisplay(args.scroll.y);
+        updateHeaderDisplay(args.scroll.y, args.direction);
+      });
 
-    $page.url.hash && $scroll.scrollTo(document.querySelector($page.url.hash));
+      $page.url.hash && $scroll.scrollTo(document.querySelector($page.url.hash));
+    };
+
+    animatePageLoad(onPageLoadComplete);
   });
 </script>
 
