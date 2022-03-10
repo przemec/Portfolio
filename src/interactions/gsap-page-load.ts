@@ -7,6 +7,7 @@ export default (onComplete) => {
     .to(intro_circle_size, {
       size_color: 80,
       duration: 2,
+      delay: 1,
       onUpdate: () => {
         let { size_color } = intro_circle_size;
         let color = document.body.querySelector('#intro_background_color') as HTMLElement;
