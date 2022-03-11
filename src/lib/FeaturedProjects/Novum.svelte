@@ -12,8 +12,9 @@
     developing it {start} years ago for me and my friends. This project has been open source since early
     2022 and is now listed on official BetterDiscord's theme list.
   </p>
+<div class="horizontal-section-wrapper">
   <div class="horizontal-section">
-    <h3>Technologies used:</h3>
+    <h3>Technologies used</h3>
     <ul>
       <li use:tooltip={{ content: Tooltip, text: 'CSS3' }}>
         <svg viewBox="0 0 128 128">
@@ -43,6 +44,8 @@
       </li>
     </ul>
   </div>
+</div>
+<div class="horizontal-section-wrapper">
   <a href="https://github.com/przemec/Novum" target="_blank" class="horizontal-section">
     <h3>Source code on GitHub</h3>
     <svg viewBox="0 0 1.1 1.1" class="align-self-start">
@@ -52,6 +55,8 @@
       />
     </svg>
   </a>
+</div>
+<div class="horizontal-section-wrapper">
   <a href="https://betterdiscord.app/theme/Novum" target="_blank" class="horizontal-section">
     <h3>Preview & Download</h3>
     <svg viewBox="0 0 24 24">
@@ -61,7 +66,8 @@
       />
     </svg>
   </a>
+</div>
   <div class="project-preview">
-    <img src="./preview-novum.png" alt="Project Preview" />
+    <img src="./preview-novum.png" alt="Novum Project Preview" loading="lazy" />
   </div>
 </div>
