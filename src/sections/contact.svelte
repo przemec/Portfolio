@@ -1,6 +1,11 @@
-<script>
+<script lang="ts">
   import Tooltip from '$lib/Tooltip.svelte';
   import { tooltip } from '$interactions/tooltip';
+  const copyEmail = () => {
+    navigator.clipboard.writeText('pszczepaniak000@gmail.com');
+    (document.querySelector('.tooltip-wrapper .content') as HTMLElement).innerText =
+      'Email has been copied!';
+  };
 </script>
 
 <section id="contact">
@@ -11,10 +16,7 @@
   </p>
   <button
     use:tooltip={{ content: Tooltip, text: 'Copy email to clipboard', isKeyboardFocusable: true }}
-    on:click={() => {
-      navigator.clipboard.writeText('pszczepaniak000@gmail.com');
-      document.querySelector('.tooltip-wrapper .content').textContent = 'Email has been copied!'
-    }}
+    on:click={copyEmail}
   >
     <h2>pszczepaniak000@gmail.com</h2>
     <svg viewBox="0 0 24 24">
@@ -98,12 +100,15 @@
     font-size: clamp(2rem, 7vw, 3rem);
     color: var(--text-color);
     border: 0.2rem solid currentColor;
+    outline: 0.2rem dotted  currentColor;
+    outline-offset: -0.2rem;
     border-radius: 1rem;
-    transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out, outline-offset 0.2s ease;
 
     &:hover,
     &:focus-visible {
       color: var(--primary);
+      outline-offset: -0.7rem;
     }
   }
 </style>
