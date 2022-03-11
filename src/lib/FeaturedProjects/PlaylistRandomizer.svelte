@@ -86,4 +86,7 @@
       />
     </svg>
   </a>
+  <div class="project-preview">
+    <img src="./preview-randomizer.png" alt="Project Preview" />
+  </div>
 </div>

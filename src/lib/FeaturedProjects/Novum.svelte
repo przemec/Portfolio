@@ -61,4 +61,7 @@
       />
     </svg>
   </a>
+  <div class="project-preview">
+    <img src="./preview-novum.png" alt="Project Preview" />
+  </div>
 </div>
