@@ -9,7 +9,7 @@
       <div
         class="stripes"
         data-scroll
-        data-scroll-speed="-3"
+        data-scroll-speed="-2"
         data-scroll-direction="horizontal"
         data-scroll-id="stripes"
         data-scroll-target="#about-container"
@@ -17,7 +17,7 @@
     </div>
     <h1>About Me</h1>
     <p>
-      I'm {age} years old
+      I'm a {age} years old
       <a
         href="#skills"
         on:click={() => {
@@ -68,13 +68,13 @@
     position: relative;
     width: 100%;
     padding: 3rem 0.2rem;
-    border-radius: 2rem;
     color: var(--text-color);
     overflow: hidden;
   }
   @media (min-width: 800px) {
     #about-container {
-      padding: 4rem 2rem;
+      border-radius: 2rem;
+      padding: 5rem;
     }
   }
   h1 {
@@ -82,14 +82,12 @@
     z-index: 1;
     font-size: clamp(3rem, 10vw, 4.5rem);
     margin-bottom: 1rem;
-    text-align: center;
   }
   p {
     position: relative;
     z-index: 1;
     max-width: 80rem;
     font-size: 2rem;
-    text-align: center;
 
     a {
       position: relative;
@@ -131,9 +129,9 @@
       background: repeating-linear-gradient(
         45deg,
         var(--background-light) 0rem,
-        var(--background-light) 2rem,
-        var(--background) 2rem,
-        var(--background) 5rem,
+        var(--background-light) 8rem,
+        var(--background) 8rem,
+        var(--background) 10rem
       );
     }
   }
