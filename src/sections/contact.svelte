@@ -66,7 +66,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    margin-bottom: 1.8rem;
+    margin-bottom: 2.2rem;
     background: transparent;
     border: none;
     color: var(--text-color);
@@ -96,19 +96,19 @@
   a {
     text-decoration: none;
     display: block;
-    padding: 0 1.5rem;
+    padding: 0 2rem;
     font-size: clamp(2rem, 7vw, 3rem);
     color: var(--text-color);
     border: 0.2rem solid currentColor;
-    outline: 0.2rem dotted  currentColor;
+    outline: 0.2rem dashed  currentColor;
     outline-offset: -0.2rem;
     border-radius: 1rem;
-    transition: color 0.3s ease-in-out, outline-offset 0.2s ease;
+    transition: color 0.3s ease-in-out, outline-offset 0.15s ease;
 
     &:hover,
     &:focus-visible {
       color: var(--primary);
-      outline-offset: -0.7rem;
+      outline-offset: 0.3rem;
     }
   }
 </style>
