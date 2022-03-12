@@ -45,8 +45,16 @@ body {
   min-height: 100vh;
   background: var(--background);
   overflow-x: hidden;
+  scrollbar-width: none;
+}
+body.scrollbarVisible {
+  scrollbar-width: auto;
+}
+body.scrollbarVisible::-webkit-scrollbar {
+  display: unset;
 }
 body::-webkit-scrollbar {
+  display: none;
   width: 1.2rem;
 }
 body::-webkit-scrollbar-thumb {

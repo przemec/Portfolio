@@ -30,7 +30,11 @@ export default (onComplete) => {
       },
       '<1'
     )
-    .to('#intro_wrapper', { display: 'none', duration: 0 })
+    .to('#intro_wrapper', {
+      display: 'none',
+      duration: 0,
+      onComplete: () => document.body.classList.add('scrollbarVisible')
+    })
     .from('#main h2', { opacity: 0, scale: 0 })
     .from('#main h1', { opacity: 0, scale: 0, delay: 0.2 })
     .from('#main p', { opacity: 0, delay: 0.4 })
