@@ -1,6 +1,7 @@
 <script>
-  import Novum from '$lib/FeaturedProjects/Novum.svelte';
   import PlaylistRandomizer from '$lib/FeaturedProjects/PlaylistRandomizer.svelte';
+  import Novum from '$lib/FeaturedProjects/Novum.svelte';
+  import RegionConquest from '$lib/FeaturedProjects/RegionConquest.svelte';
   import NurseScheduling from '$lib/FeaturedProjects/NurseScheduling.svelte';
 </script>
 
@@ -8,6 +9,7 @@
   <h1>Featured Projects</h1>
   <PlaylistRandomizer />
   <Novum />
+  <RegionConquest />
   <NurseScheduling />
 </section>
 
