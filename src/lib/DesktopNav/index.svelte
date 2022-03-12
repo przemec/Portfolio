@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { scroll, active_section } from '$store';
+  import { active_section } from '$store';
   import NavIndicator from './components/NavIndicator.svelte';
 
   let tabs = [
@@ -28,7 +28,7 @@
       <a
         href={`/#${tab.title}`}
         on:click={() => {
-          $scroll.scrollTo(document.querySelector(`#${tab.title}`));
+          document.querySelector(`#${tab.title}`).scrollIntoView({ behavior: 'smooth' });
           window.history.replaceState(null, '', `#${tab.title}`);
         }}
       >

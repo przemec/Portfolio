@@ -1,6 +1,6 @@
 <script lang="ts">
   import { fly, fade } from 'svelte/transition';
-  import { scroll, active_section} from '$store';
+  import { active_section } from '$store';
   import BurgerButton from './components/BurgerButton.svelte';
   import NavIndicator from './components/NavIndicator.svelte';
   import LinksPanel from '../LinksPanelHorizontal.svelte';
@@ -28,9 +28,9 @@
             {#if $active_section === tab}<NavIndicator />{/if}
             <a
               href={`/#${tab}`}
-              on:click={(e) => {
+              on:click={() => {
                 set_hidden(true);
-                $scroll.scrollTo(document.querySelector(`#${tab}`));
+                document.querySelector(`#${tab}`).scrollIntoView({ behavior: 'smooth' });
                 window.history.replaceState(null, '', `#${tab}`);
               }}
             >

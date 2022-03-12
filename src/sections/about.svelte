@@ -1,19 +1,11 @@
 <script>
-  import { scroll } from '$store';
   const age = Math.floor(new Date().getFullYear() - 2000.5);
 </script>
 
 <section id="about">
   <div id="about-container">
     <div class="stripesWrap">
-      <div
-        class="stripes"
-        data-scroll
-        data-scroll-speed="-2"
-        data-scroll-direction="horizontal"
-        data-scroll-id="stripes"
-        data-scroll-target="#about-container"
-      />
+      <div class="stripes" />
     </div>
     <h1>About Me</h1>
     <p>
@@ -21,7 +13,7 @@
       <a
         href="#skills"
         on:click={() => {
-          $scroll.scrollTo(document.querySelector('#skills'));
+          document.querySelector('#skills').scrollIntoView({ behavior: 'smooth' });
           window.history.replaceState(null, '', '#skills');
         }}>web developer</a
       > located in Cracow, Poland.
@@ -31,7 +23,7 @@
       <a
         href="#projects"
         on:click={() => {
-          $scroll.scrollTo(document.querySelector('#projects'));
+          document.querySelector('#projects').scrollIntoView({ behavior: 'smooth' });
           window.history.replaceState(null, '', '#projects');
         }}>solving problems</a
       >. My affection towards coding started in high school, where I wrote my first lines of
@@ -46,7 +38,7 @@
       <a
         href="#contact"
         on:click={() => {
-          $scroll.scrollTo(document.querySelector('#contact'));
+          document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
           window.history.replaceState(null, '', '#contact');
         }}>the future</a
       > I want to further explore Front End industry, as well as to learn more about Back End technologies,

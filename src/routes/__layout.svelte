@@ -1,6 +1,5 @@
 <script lang="ts">
   import '../app.css';
-  import '../locomotive-scroll.css';
 </script>
 
 <svelte:head>

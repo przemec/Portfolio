@@ -1,11 +1,7 @@
-<script lang="ts">
-  import { scroll } from '$store';
-</script>
-
 <button
   id="logo"
   on:click={() => {
-    $scroll.scrollTo(0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     window.history.replaceState(null, '', '/');
   }}
 />

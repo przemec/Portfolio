@@ -1,6 +1,5 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { scroll } from '$store';
   import IntroPage from '$lib/IntroPage.svelte';
   import MobileNav from '$lib/MobileNav/index.svelte';
   import LinksPanelHorizontal from '$lib/LinksPanelHorizontal.svelte';
@@ -16,9 +15,6 @@
 
   onMount(async () => {
     document.body.style.overflow = 'hidden';
-    const initLocomotiveScroll = (await import('$interactions/init-locomotive-scroll')).default;
-    await initLocomotiveScroll();
-    $scroll.scrollTo(0, { duration: 0 });
     const initInteractions = (await import('$interactions/init-interactions')).default;
     initInteractions();
   });
@@ -45,15 +41,15 @@
 
 <IntroPage />
 
-<div data-scroll-container id="content">
-  <main data-scroll-section>
+<div id="content">
+  <main>
     <Main />
     <About />
     <Skills />
     <Projects />
     <Contact />
   </main>
-  <footer data-scroll-section>
+  <footer>
     <div id="footer_links">
       <LinksPanelHorizontal />
     </div>
@@ -63,7 +59,7 @@
 
 <style lang="scss">
   header {
-    z-index: 2;
+    z-index: 10;
     position: fixed;
     top: 0;
     left: 0;

@@ -1,23 +1,26 @@
-import { get } from 'svelte/store';
-import { scroll } from '$store';
 import { updateHeaderDisplay, updateScrollTipDisplay } from '$interactions/scroll-events';
 
 export default async () => {
   let animatePageLoad = (await import('$interactions/gsap-page-load')).default;
   let initActiveSectionObserver = (await import('$interactions/active-section-observer')).default;
 
-  get(scroll).scrollTo(0);
-  updateHeaderDisplay(0, 'up');
+  window.scrollTo(0,0);
+  updateHeaderDisplay(0, false);
   const onPageLoadComplete = () => {
     initActiveSectionObserver();
 
-    get(scroll).on('scroll', (args) => {
-      updateScrollTipDisplay(args.scroll.y);
-      updateHeaderDisplay(args.scroll.y, args.direction);
+    let lastScrollTop: number;
+
+    document.addEventListener('scroll', () => {
+      let currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      updateScrollTipDisplay(currentScrollTop);
+      updateHeaderDisplay(currentScrollTop, currentScrollTop > lastScrollTop);
+      lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
     });
 
     document.body.style.overflow = 'unset';
-    document.location.hash && get(scroll).scrollTo(document.querySelector(document.location.hash));
+    document.location.hash &&
+      document.querySelector(document.location.hash).scrollIntoView({ behavior: 'smooth' });
   };
 
   animatePageLoad(onPageLoadComplete);
