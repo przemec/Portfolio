@@ -10,6 +10,7 @@ export default () => {
     },
     scrollTrigger: {
       trigger: '#skills',
+      toggleActions: 'play complete none none',
       start: 'top 30%'
     }
   });
@@ -56,7 +57,8 @@ export default () => {
       },
       scrollTrigger: {
         trigger: project,
-        start: 'top center'
+        start: 'top center',
+        toggleActions: 'play complete none none'
       }
     });
     if (ismobile)
@@ -85,5 +87,38 @@ export default () => {
         '<0.2'
       )
       .from(preview, { scale: 0.6 });
+  });
+
+  let contact_timeline = gsap.timeline({
+    defaults: {
+      opacity: 0,
+      duration: 0.4
+    },
+    scrollTrigger: {
+      trigger: '#contact',
+      start: 'top center'
+    }
+  });
+  if (!ismobile)
+    contact_timeline
+      .from('#contact h1', {
+        duration: 0.3,
+        stagger: -0.3,
+        y: '-2rem'
+      })
+      .from('#contact p', { y: '-2rem' })
+      .from('#contact button', { y: '-2rem' })
+      .from('#contact a', { scale: 0.6 });
+
+  gsap.to('#vertical_links a', {
+    scrollTrigger: {
+      trigger: '#contact',
+      toggleActions: 'play none none reverse',
+      start: 'center 60%'
+    },
+    x: '100%',
+    opacity: 0,
+    duration: 0.3,
+    stagger: 0.1
   });
 };
