@@ -108,9 +108,9 @@ export default () => {
       })
       .from('#contact p', { y: '-2rem' })
       .from('#contact button', { y: '-2rem' })
-      .from('#contact a', { scale: 0.6 });
+      .from('#contact > a', { scale: 0.6 });
 
-  if (!ismobile) {
+  if (!ismobile)
     gsap.to('#vertical_links a', {
       scrollTrigger: {
         trigger: '#contact',
@@ -122,17 +122,16 @@ export default () => {
       duration: 0.4,
       stagger: 0.1
     });
-    gsap.to('#contact_links a', {
-      scrollTrigger: {
-        trigger: '#contact',
-        toggleActions: 'play none none reverse',
-        start: 'center 60%'
-      },
-      opacity: 1,
-      y: '0%',
-      delay: 0.6,
-      duration: 0.3,
-      stagger: 0.1
-    });
-  }
+
+  gsap.to('#contact_links a', {
+    scrollTrigger: {
+      trigger: '#contact',
+      toggleActions: `play none none ${ismobile ? 'none' : 'reverse'}`,
+      start: 'center 60%'
+    },
+    opacity: 1,
+    y: '0%',
+    duration: 0.3,
+    stagger: 0.1
+  });
 };

@@ -91,6 +91,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 0;
+    transform: translateY(100%);
     width: 5.5rem;
     height: 5.5rem;
     color: var(--text-color);
@@ -110,8 +112,6 @@
     @media (min-width: 800px) {
       &:nth-of-type(2) {
         margin: 0 4rem;
-        opacity: 0;
-        transform: translateY(100%);
       }
       div {
         width: 4.5rem;
