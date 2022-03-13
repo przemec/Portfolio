@@ -4,7 +4,7 @@
 
 <style lang="scss">
   a {
-    z-index: 5;
+    z-index: 15;
     position: absolute;
     top: 2rem;
     left: 2rem;
