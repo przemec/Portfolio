@@ -1,6 +1,8 @@
 import gsap from 'gsap';
 
 export default () => {
+  const { matches: ismobile } = window.matchMedia('(max-width: 800px)');
+
   let skills_timeline = gsap.timeline({
     defaults: {
       opacity: 0,
@@ -11,24 +13,25 @@ export default () => {
       start: 'top 30%'
     }
   });
-  skills_timeline
-    .from('#skills h1', {
-      y: '-5rem'
-    })
-    .from('#skills-carousel .skills-wrapper', {
-      duration: 0.3,
-      stagger: -0.3
-    })
-    .from('#carousel-navigation .button-next', {
-      x: '-5rem'
-    })
-    .from(
-      '#carousel-navigation .button-prev',
-      {
-        x: '5rem'
-      },
-      '<'
-    );
+  if (!ismobile)
+    skills_timeline
+      .from('#skills h1', {
+        y: '-5rem'
+      })
+      .from('#skills-carousel .skills-wrapper', {
+        duration: 0.3,
+        stagger: -0.3
+      })
+      .from('#carousel-navigation .button-next', {
+        x: '-5rem'
+      })
+      .from(
+        '#carousel-navigation .button-prev',
+        {
+          x: '5rem'
+        },
+        '<'
+      );
 
   let project_wrappers = document.querySelectorAll('.project-wrapper');
   gsap.from('#projects h1', {
@@ -56,6 +59,11 @@ export default () => {
         start: 'top center'
       }
     });
+    if (ismobile)
+      project_timeline.from(project, {
+        duration: 0.1
+      });
+
     project_timeline
       .from(title, {
         y: '-2rem',
