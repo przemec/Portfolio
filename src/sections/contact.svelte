@@ -1,6 +1,8 @@
 <script lang="ts">
   import Tooltip from '$lib/Tooltip.svelte';
   import { tooltip } from '$interactions/tooltip';
+  import ContactLinks from '$lib/ContactLinks.svelte';
+
   const copyEmail = () => {
     navigator.clipboard.writeText('pszczepaniak000@gmail.com');
     (document.querySelector('.tooltip-wrapper .content') as HTMLElement).innerText =
@@ -27,15 +29,17 @@
     </svg>
   </button>
   <a href="mailto:pszczepaniak000@gmail.com">Let's talk!</a>
+  <ContactLinks />
 </section>
 
 <style lang="scss">
   section {
+    position: relative;
     min-height: 100vh;
     min-height: calc(100vh - 14rem);
     width: 100%;
     max-width: 100rem;
-    padding: 0 0.5rem;
+    padding: 0 0.5rem 6rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -100,7 +104,7 @@
     font-size: clamp(2rem, 7vw, 3rem);
     color: var(--text-color);
     border: 0.2rem solid currentColor;
-    outline: 0.2rem dashed  currentColor;
+    outline: 0.2rem dashed currentColor;
     outline-offset: -0.2rem;
     border-radius: 1rem;
     transition: color 0.3s ease-in-out, outline-offset 0.15s ease;

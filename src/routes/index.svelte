@@ -50,9 +50,6 @@
     <Contact />
   </main>
   <footer>
-    <div id="footer_links">
-      <LinksPanelHorizontal />
-    </div>
     <p>&copy 2022 | Designed & coded by Przemek Szczepaniak</p>
   </footer>
 </div>
@@ -138,32 +135,26 @@
     }
   }
   footer {
+    z-index: 2;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: var(--text-color);
+    background: var(--background);
     width: 100%;
-    height: 14rem;
+    height: 8rem;
 
     p {
       width: 100%;
       letter-spacing: 0.2rem;
       text-align: center;
+      font-size: 1.6rem;
     }
-  }
-  @media (min-width: 800px) {
-    footer {
-      height: 8rem;
-    }
-  }
-  #footer_links {
-    width: 100%;
-    height: 5rem;
-  }
-  @media (min-width: 800px) {
-    #footer_links {
-      display: none;
+    @media (min-width: 800px) {
+      p {
+        font-size: 1.8rem;
+      }
     }
   }
 </style>
