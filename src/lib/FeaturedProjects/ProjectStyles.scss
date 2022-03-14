@@ -143,7 +143,8 @@
           filter: opacity(0.2) grayscale(1);
         }
       }
-      &:hover {
+      &:hover,
+      &:focus-visible {
         z-index: 3;
         width: 80%;
         height: 60%;
@@ -155,6 +156,9 @@
     }
     &:nth-of-type(2n) {
       align-items: flex-end;
+      ul {
+        flex-direction: row-reverse;
+      }
       h2 {
         text-align: right;
       }
@@ -171,7 +175,8 @@
         img {
           left: 0;
         }
-        &:hover {
+        &:hover,
+        &:focus-visible {
           img {
             filter: opacity(1) grayscale(0) drop-shadow(0 0 1rem #000);
           }
