@@ -17,7 +17,7 @@
   section {
     position: relative;
     width: 100%;
-    max-width: 100rem;
+    max-width: 110rem;
     padding: 10vh 0;
     display: flex;
     align-items: center;

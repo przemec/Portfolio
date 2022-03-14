@@ -79,7 +79,7 @@
       </svg>
     </a>
   </div>
-  <div class="project-preview">
+  <a href="https://region-conquest.herokuapp.com/" target="_blank" class="project-preview dark">
     <img src="./preview-conquest.png" alt="Reqion Conquest Project Preview" loading="lazy" />
-  </div>
+  </a>
 </div>

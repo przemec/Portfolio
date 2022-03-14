@@ -87,7 +87,7 @@
       </svg>
     </a>
   </div>
-  <div class="project-preview">
+  <a href="https://adopcja-glider.netlify.app/" target="_blank" class="project-preview">
     <img src="./preview-scheduling.png" alt="Nurse Scheduling Project Preview" loading="lazy" />
-  </div>
+  </a>
 </div>

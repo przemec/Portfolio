@@ -38,7 +38,7 @@ export default () => {
   gsap.from('#projects h1', {
     scrollTrigger: {
       trigger: project_wrappers[0],
-      start: '-20rem center'
+      start: '-20rem 70%'
     },
     y: '-3rem',
     opacity: 0,
@@ -57,7 +57,7 @@ export default () => {
       },
       scrollTrigger: {
         trigger: project,
-        start: 'top center',
+        start: 'top 70%',
         toggleActions: 'play complete none none'
       }
     });

@@ -92,7 +92,7 @@
       </svg>
     </a>
   </div>
-  <div class="project-preview">
+  <a href="https://ytrandomizer.web.app/" target="_blank" class="project-preview">
     <img src="./preview-randomizer.png" alt="Playlist Randomizer Project Preview" loading="lazy" />
-  </div>
+  </a>
 </div>
