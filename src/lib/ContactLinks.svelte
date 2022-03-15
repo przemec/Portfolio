@@ -10,7 +10,7 @@
 
 <ul id="contact_links">
   <a
-    id="link-gh"
+    id="contact-link-gh"
     href="https://github.com/przemec/"
     target="_blank"
     on:mouseenter={() => set_active(0)}
@@ -32,7 +32,7 @@
     </svg>
   </a>
   <a
-    id="link-li"
+    id="contact-link-li"
     href="https://www.linkedin.com/in/pszczepaniak0/"
     target="_blank"
     on:mouseenter={() => set_active(1)}
@@ -55,7 +55,7 @@
     </svg>
   </a>
   <a
-    id="link-bd"
+    id="contact-link-bd"
     href="https://betterdiscord.app/developer/tomec"
     on:mouseenter={() => set_active(2)}
     on:mouseleave={() => set_inactive(2)}
@@ -156,19 +156,19 @@
     &.semihoveredtop div::after {
       opacity: 1;
     }
-    &#link-gh div,
-    &#link-gh div::before,
-    &#link-gh div::after {
+    &#contact-link-gh div,
+    &#contact-link-gh div::before,
+    &#contact-link-gh div::after {
       clip-path: url(#clip-contact-gh);
     }
-    &#link-li div,
-    &#link-li div::before,
-    &#link-li div::after {
+    &#contact-link-li div,
+    &#contact-link-li div::before,
+    &#contact-link-li div::after {
       clip-path: url(#clip-contact-li);
     }
-    &#link-bd div,
-    &#link-bd div::before,
-    &#link-bd div::after {
+    &#contact-link-bd div,
+    &#contact-link-bd div::before,
+    &#contact-link-bd div::after {
       clip-path: url(#clip-contact-bd);
     }
     svg {
