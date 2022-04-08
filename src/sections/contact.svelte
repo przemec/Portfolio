@@ -13,8 +13,8 @@
 <section id="contact">
   <h1>Get In Touch</h1>
   <p>
-    I'm currently looking for new opportunities in the web development industry. If You have any
-    questions, don't hesitate to contact me.
+    Although I'm not currently looking for any new opportunities, I'm always open to talk. If You
+    have any questions, don't hesitate to contact me.
   </p>
   <button
     use:tooltip={{ content: Tooltip, text: 'Copy email to clipboard', isKeyboardFocusable: true }}
